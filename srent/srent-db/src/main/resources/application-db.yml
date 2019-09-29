@@ -9,11 +9,10 @@ spring:
     druid:
       url:  jdbc:mysql://localhost:3306/srent?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
       driver-class-name:  com.mysql.jdbc.Driver
+      # 此处需要更新账号密码
       username:  root
-#      线上root密码
-#      password:  12345678
-    #      线下密码
-    password: 599890897
+      password: 12345678
+
     initial-size:  10
     max-active:  50
     min-idle:  10
