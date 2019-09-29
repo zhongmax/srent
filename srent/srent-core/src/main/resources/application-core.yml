@@ -2,7 +2,7 @@ srent:
 
   wx:
     app-id: wx233751238b7f98f3
-    app-secret: 348930af73634662021d4e045a710cf2
+    app-secret: xxxxxxxxxxxxxxxxxxxxxxx
     mch-id: 111111
     mch-key: xxxxxx
     notify-url: http://www.example.com/wx/order/pay-notify
