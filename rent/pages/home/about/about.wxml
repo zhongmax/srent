@@ -1,0 +1,10 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于rent小程序</view>
+  <view class='text-content'>
+    <view>Hi！各位~欢迎来到这个页面！</view>
+    <view class='margin-top-sm'>该项目是我们参加学校第二课堂开发的一款关于租赁物品的小程序，分为后端和前端两个部分，其中后端设计技术有Spring Boot和MyBatis，前端主要以微信开发语法和ColorUI组件库，(对消息的WebSocket不太了解，后续应该会更新消息的支持)，该项目后续会发布在Github上，也许会持续更新，毕竟是第一次做这么大的东西。</view>
+    <view class='margin-top-sm'>项目是开源的，并且参考很多类似的项目的开源项目，非常感谢这些开发者的无私贡献</view>
+    <view class='margin-top-sm'>该项目你可以随意更改，我也会更新一些关于这个项目的文档。代码质量可以说很糟糕，毕竟代码不规范，修改阅读的时候就是两行泪，但是，这么写着很爽，以后我会多多注意代码质量，如果这个项目对你有帮助，欢迎点个Star٩(๑❛ᴗ❛๑)۶</view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

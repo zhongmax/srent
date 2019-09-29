@@ -1,0 +1,45 @@
+<!--pages/home/rent/rent.wxml-->
+<view class="space"></view>
+<view class="no-order" wx:if="{{rentList.length <= 0}}">
+  <view class="c">
+    <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+    <text>还没有任何订单呢</text>
+  </view>
+</view>
+
+<view class="order" wx:for="{{rentList}}" wx:key="id" data-id="{{item.id}}">
+  <view class="content">
+    <view class="top">
+      <view class="l">
+        <image class="post-user-avatar" src="{{item.postUserInfo.avatarUrl}}"></image>
+        <text class="post-username">{{item.postUserInfo.nickName}}</text>
+      </view>
+      <view class="r">
+        <text class="order-status">{{item.orderStatusText}}</text>
+      </view>
+
+    </view>
+
+    <view class="middle" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
+      <image src="{{gitem.picUrl}}" class="goods-image" mode="widthFix"></image>
+      <view class="goods-name-and-days">
+        <text class="goods-name">{{gitem.goodsName}}</text>
+
+        <navigator class="goods-days" url="../rentDetail/rentDetail?id={{item.id}}" open-type="redirect">
+          <view wx:if="{{!item.hasShip}}">
+            <text class="go-ship" bindtap="goShip">去发货</text>
+          </view>
+          <view wx:else>
+            <text class="go-ship" bindtap="goShip">查看</text>
+          </view>
+        </navigator>
+      </view>
+
+    </view>
+
+    <view class="bottom">
+      <text class="order-sn">归还时间：{{item.date}}</text>
+      <text class="total-goods-price">实付：￥{{item.orderPrice}}</text>
+    </view>
+  </view>
+</view>

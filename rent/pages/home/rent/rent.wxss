@@ -1,0 +1,151 @@
+/* pages/home/rented/rented.wxss */
+.space {
+  margin-top: 30rpx;
+}
+
+.no-order {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.no-order .c {
+  width: 100%;
+  height: auto;
+  margin-top: 200rpx;
+}
+
+.no-order .c image {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 258rpx;
+  height: 258rpx;
+}
+
+.no-order .c text {
+  margin: 0 auto;
+  display: block;
+  width: 258rpx;
+  height: 29rpx;
+  line-height: 29rpx;
+  text-align: center;
+  font-size: 29rpx;
+  color: #999;
+}
+
+.content {
+  width: 90%;
+  height: 450rpx;
+  background: #fff;
+  border-radius: 14rpx;
+  margin-left: 5%;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.order {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.top {
+  width: 92%;
+  height: 100rpx;
+  margin-left: 4%;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.post-user-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.l {
+  display: flex;
+  flex-direction: row;
+}
+
+.r {
+  
+}
+
+.post-username {
+  font-size: 38rpx;
+  width: 250rpx;
+  margin-top: 10rpx;
+}
+
+.order-status {
+  
+}
+
+.middle {
+  display: flex;
+  width: 92%;
+  height: 250rpx;
+  margin-left: 4%;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.goods-image {
+  width: 164rpx;
+  height: 164rpx;
+  border-radius: 14rpx;
+}
+
+.goods-name {
+  margin-left: 30rpx;
+  margin-bottom: 80rpx;
+  width: 440rpx;
+  max-width: 440rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods-name-and-days {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.goods-days {
+  margin-left: 300rpx;
+}
+
+.bottom {
+  width: 92%;
+  height: 100rpx;
+  margin-left: 4%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.go-ship {
+  padding: 10rpx 30rpx 10rpx 30rpx;
+  border: #f45b43 1.5px solid;
+  border-radius: 10rpx;
+  font-weight: 700;
+  color: #f45b43
+}
+
+.order-sn {
+  
+}
+
+.total-goods-price {
+  
+}

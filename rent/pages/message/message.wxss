@@ -1,0 +1,80 @@
+/* pages/message/message.wxss */
+
+.no-collect {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.no-collect .c {
+  width: 100%;
+  height: auto;
+  margin-top: 200rpx;
+}
+
+.no-collect .c image {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 258rpx;
+  height: 258rpx;
+}
+
+.no-collect .c text {
+  margin: 0 auto;
+  display: block;
+  width: 258rpx;
+  height: 29rpx;
+  line-height: 29rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #999;
+}
+
+.collect-list {
+  
+}
+
+.mess-list {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px #a9a9a9 solid;
+  padding-bottom: 20rpx;
+  height: 200rpx;
+}
+
+.mess-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5rpx;
+  margin: 50rpx 20rpx 0 30rpx;
+}
+
+.mess-info {
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  margin-top: 40rpx;
+}
+
+.author {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.detail {
+  color: #a9a9a9;
+  font-size: 30rpx;
+}
+
+.date {
+  font-size: 30rpx;
+  color: #a9a9a9;
+  margin-top: 10rpx;
+}
+
+.item-img {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 30rpx;
+}

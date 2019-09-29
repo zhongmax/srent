@@ -1,0 +1,28 @@
+<view class="container" style="{{containerStyle}}">
+<!-- 顶部 -->
+<view class="top-container">
+  <navigator class="top-goods-image" url="/pages/goods/goods?id={{id}}">
+    <image class="top-image" src="{{goods.gallery[0]}}"></image>
+  </navigator>
+
+  <view class="top-goods-info">
+    <text class="goods-name">{{goods.name}}</text>
+    <text class="goods-price">￥<text>{{goods.rentPrice}} / 天</text></text>
+  </view>
+
+  <view class="buy" wx:if="{{postUserInfo.nickName !== userInfo.nickName}}">
+    <text class="buy-btn" bindtap="goBuy">马上租</text>
+  </view>
+</view>
+
+  <chatroom
+    style="width: 100%; height: 100%"
+    envId="{{chatRoomEnvId}}"
+    collection="{{chatRoomCollection}}"
+    groupId="{{room}}"
+    groupName="{{chatRoomGroupName}}"
+    userInfo="{{userInfo}}"
+    onGetUserInfo="{{onGetUserInfo}}"
+    getOpenID="{{getOpenID}}"
+  ></chatroom>
+</view>

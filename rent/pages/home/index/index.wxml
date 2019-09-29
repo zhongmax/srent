@@ -1,0 +1,83 @@
+<view class="about-me">
+  <block wx:if="{{hasLogin}}">
+    <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
+    <view class="name-and-sign">
+      <text class="user-name1">{{nickName}}</text>
+      <text class="signature">签名：50包邮解君愁</text>
+    </view>
+  </block>
+  <block wx:else>
+    <image class="userinfo-avatar" src="{{img}}"></image>
+    <view class="name-and-sign">
+      <text class="user-name" bindtap="goLogin">{{nickName}}</text>
+      <text class="signature">签名：50包邮解君愁</text>
+    </view>
+  </block>
+
+  <view wx:if="{{!hasLogin}}">
+    <view class="settings" bindtap="goLogin">
+      <image class="settings-icon" src="/static/images/next.png"></image>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="settings" bindtap="moreUserInfo">
+      <image class="settings-icon" src="/static/images/next.png"></image>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{hasLogin}}">
+  <view class="my-option" catchtap="onMyReleaseTap">
+    <image class="icon" src="/static/images/cart.png"></image>
+    <text class="option-title">我发布的</text>
+  </view>
+
+  <view class="my-option" catchtap="onMyRentTap">
+    <image class="icon" src="/static/images/box-remove.png"></image>
+    <text class="option-title">我租出的</text>
+  </view>
+
+  <view class="my-option" catchtap='onCollectionTap'>
+    <image class="icon" src="/static/images/star.png"></image>
+    <text class="option-title">我的收藏</text>
+  </view>
+
+  <view class="my-option" catchtap='onRentedTap'>
+    <image class="icon" src="/static/images/box-add.png"></image>
+    <text class="option-title">我租到的</text>
+  </view>
+
+  <view class="my-option" bindtap='onReparationTap'>
+    <image class="icon" src="/static/images/Money.png"></image>
+    <text class="option-title">赔偿</text>
+  </view>
+</view>
+<view wx:else>
+  <view class="my-option" catchtap="goLogin">
+    <image class="icon" src="/static/images/cart.png"></image>
+    <text class="option-title">我发布的</text>
+  </view>
+
+  <view class="my-option" catchtap="goLogin">
+    <image class="icon" src="/static/images/box-remove.png"></image>
+    <text class="option-title">我出租的</text>
+  </view>
+
+  <view class="my-option" catchtap='goLogin'>
+    <image class="icon" src="/static/images/star.png"></image>
+    <text class="option-title">我的收藏</text>
+  </view>
+
+  <view class="my-option" catchtap='goLogin'>
+    <image class="icon" src="/static/images/box-add.png"></image>
+    <text class="option-title">我租到的</text>
+  </view>
+
+  <view class="my-option" bindtap='goLogin'>
+    <image class="icon" src="/static/images/Money.png"></image>
+    <text class="option-title">赔偿</text>
+  </view>
+</view>
+
+<view class="logout" wx:if="{{hasLogin}}" bindtap="exitLogin">退出登录</view>

@@ -1,0 +1,4 @@
+/* pages/activity/activity.wxss */
+.top-img {
+  width: 100%;
+}

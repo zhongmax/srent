@@ -1,0 +1,6 @@
+<!--pages/release/release-done/release-done.wxml-->
+<view class="release-done">
+  <image class="image-done" src="/static/images/done.png" />
+  <text class="title">发布成功</text>
+  <button class="button" bindtap="done">确定</button>
+</view>

@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/release/release",
+    "pages/sort/sort",
+    "pages/question-ask/question-ask",
+    "pages/message/message",
+    "pages/message/room/room",
+    "pages/search/search",
+    "pages/activity/activity",
+    "pages/goods/goods",
+    "pages/auth/login/login",
+    "pages/chat/chat",
+    "pages/auth/accountLogin/accountLogin",
+    "pages/auth/register/register",
+    "pages/auth/reset/reset",
+    "pages/home/index/index",
+    "pages/category/category",
+    "pages/release/release-done/release-done",
+    "pages/checkout/checkout",
+    "pages/home/address/address",
+    "pages/home/addressAdd/addressAdd",
+    "pages/payResult/payResult",
+    "pages/home/rent/rent",
+    "pages/home/rented/rented",
+    "pages/home/collect/collect",
+    "pages/home/post/post",
+    "pages/home/rentDetail/rentDetail",
+    "pages/home/moreSettings/moreSettings",
+    "pages/home/about/about",
+    "pages/home/footprint/footprint",
+    "pages/updateGoods/updateGoods",
+    "pages/updateGoods/category/category",
+    "pages/home/reparation/reparation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFBE48",
+    "navigationBarTitleText": "校园租赁",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "text": "发布",
+        "iconPath": "static/images/release.png",
+        "selectedIconPath": "static/images/release_selected.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "static/images/message.png",
+        "selectedIconPath": "static/images/message_selected.png"
+      },
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "我的",
+        "iconPath": "static/images/we.png",
+        "selectedIconPath": "static/images/we_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

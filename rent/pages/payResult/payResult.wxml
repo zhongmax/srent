@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="pay-result">
+    <view class="success" wx:if="{{status}}">
+      <view class="msg">付款成功</view>
+      <view class="btns">
+        <navigator class="btn" url="/pages/home/rented/rented" open-type="redirect">查看订单</navigator>
+        <navigator class="btn" url="/pages/index/index" open-type="switchTab">继续逛</navigator>
+      </view>
+    </view>
+  </view>
+</view>

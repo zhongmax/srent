@@ -1,0 +1,58 @@
+<!--pages/index/index.wxml-->
+
+<view class="bg">
+  <!-- 顶部 top Start-->
+  <view class="top">
+    <view class="search" catchtap="onSearchTap">
+      <icon type="search" class="search-img" size="22" color="#405f80"></icon>
+      <text type="text">Search</text>
+    </view>
+  </view>
+
+  <!-- 顶部 top End -->
+
+  <!-- 滑块 swiper Start -->
+  <swiper circular="true" indicator-dots="true" autoplay="true" interval="5000" indicator-color="rgba(255, 255, 255, 0.5)"  catchtap='swiperTap'>
+    <block wx:for="{{swiperList}}" wx:for-item="item">
+      <swiper-item>
+        <image src="{{item.img}}" data-postId="{{item.id}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" indicator-color="#8799a3" indicator-active-color="#0081ff" catchtap='swiperTap'>
+  <swiper-item wx:for="{{swiperList}}" wx:for-item="item" wx:key class="{{swiperCurrent==index?'cur':''}}">
+    <view class="swiper-item" data-postId="{{item.id}}">
+      <image src="{{item.img}}" mode="aspectFill" wx:if="{{true}}"></image>
+    </view>
+  </swiper-item>
+</swiper> -->
+  <!-- 滑块 swiper End -->
+
+  <!-- 分类 sort START -->
+  <view class="sort-container">
+    <navigator class="sort-item" url="/pages/sort/sort?id={{item.id}}" wx:for="{{channel}}" wx:key="id">
+      <image class="sort-icon" src="{{item.iconUrl}}"></image>
+      <text class="sort-title">{{item.name}}</text>
+    </navigator>
+  </view>
+  <!-- 分类 sort End -->
+
+  <!-- 最新商品 newItem Start -->
+  <view class="new-item-container">
+    <view class="new-item-title">
+      <text>最新商品</text>
+    </view>
+    <block wx:for="{{newGoods}}" wx:for-item="item" wx:key="id">
+      <view class="new-item" bindtap="onItemTap" data-itemId="{{item.id}}">
+        <image class="new-item-img" src="{{item.gallery[0]}}" mode="widthFix"></image>
+        <view class="new-item-info">
+          <text class="new-item-text">{{item.name}}</text>
+          <text class="new-item-prices">¥ {{item.rentPrice}}/天</text>
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <!-- 最新商品 newItem End -->
+
+</view>

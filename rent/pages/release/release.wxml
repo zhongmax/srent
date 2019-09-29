@@ -1,0 +1,121 @@
+<!--pages/release/release.wxml 1-->
+<view class="no-login" wx:if="{{!hasLogin}}">
+  <!-- <view class="no-login" wx:if="{{false}}"> -->
+  <view class="non">
+    <image src="/static/images/non-cart.png" />
+    <text>还没有登录</text>
+    <button bindtap="goLogin">去登录</button>
+  </view>
+</view>
+
+<view class="container" wx:else>
+  <!-- 图片上传 images-upload Start -->
+  <view class="container-1">
+    <view class="post-goods">
+      <view class="post-image-container">
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+            <view class="weui-uploader__title">图片上传</view>
+          </view>
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-idx="{{index}}" />
+                  <image src="/static/images/close.png" class="weui-uploader__close" data-idx="{{index}}" bindtap="removeImage"></image>
+                  <view class="weui-uploader__first-img" wx:if="{{item == files[0]}}">封面</view>
+                </view>
+              </block>
+              <view class="weui-uploader__input-box" wx:if="{{files.length < 8}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="cu-bar bg-white">
+    <view class="action">
+      图片上传
+    </view>
+    <view class="action">
+      {{files.length}}/8
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{files}}" wx:key="{{index}}" bindtap="previewImage" data-url="{{files[index]}}">
+        <image src='{{files[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="removeImage" data-idx="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="chooseImage" wx:if="{{files.length<8}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view> -->
+  <!-- 图片上传 images-upload End -->
+
+  <!-- 商品信息 goods-info Start -->
+  <!-- <view class="name-nav">
+    <input value="{{name}}" bindinput="bindTitleInput" placeholder="商品名称" class="goods-name" maxlength="40" />
+    <text class="goods-count">{{40 - name.length}}</text>
+  </view> -->
+  <view class="cu-form-group margin-top goods-name">
+    <input value="{{name}}" class="goods-name" bindinput="bindTitleInput" placeholder="输入商品名称" maxlength="40"></input>
+    <text class="goods-count">{{40 - name.length}}</text>
+  </view>
+
+  <!-- <view class="desc-nav">
+    <textarea maxlength="-1" class="goods-desc" focus="true" bindinput="bindInputValue" placeholder="在此描述你的宝贝：如品牌、规格、成色等" />
+  </view> -->
+
+  <view class="cu-form-group">
+    <textarea maxlength="-1" style="height: 8.6em;" disabled="{{modalName!=null}}" bindinput="bindInputValue" placeholder="在此描述你的宝贝：如品牌、规格、成色以及确定您的租赁协议"></textarea>
+  </view>
+
+  <view class="cu-form-group margin-top">
+    <view class="title">押金</view>
+    <input placeholder="押金" value="{{deposit}}" type="digit" bindinput="bindDepositInput"></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">租金(天为单位)</view>
+    <input placeholder="租金" value="{{rentPrice}}" type="digit" bindinput="bindPriceInput"></input>
+  </view>
+
+  <!-- <view class="rent-nav">
+    <view class="rent-info">
+      <text class="rent-title">租金</text>
+      <input class="rent-input" value="{{rentPrice}}" type="digit" bindinput="bindPriceInput" placeholder="租金" />
+      <text class="rent-title">/ 天</text>
+    </view>
+    <view class="category" bindtap="bindCat">
+      分类
+    </view>
+    <view class="category-name">{{catName}}</view>
+  </view> -->
+
+  <view class="rent-nav1">
+    <view class="rent-info">
+      <view class="category" bindtap="bindCat">
+        分类
+      </view>
+      <view class="category-name">{{catName}}</view>
+    </view>
+  </view>
+
+  <view class="submit-nav">
+    <!-- <view class="submit" bindtap="onPost">提交</view> -->
+    <!-- <button class="cu-btn bg-red margin-tb-sm lg" bindtap="onPost">提交 
+    </button>-->
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-red lg" bindtap="onPost">提交</button>
+    </view>
+    
+  </view>
+
+  <!-- 商品信息 goods-info End -->
+</view>

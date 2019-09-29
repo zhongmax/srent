@@ -1,0 +1,29 @@
+/* pages/release/release-done/release-done.wxss */
+.release-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-done {
+  width: 256rpx;
+  height: 256rpx;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.title {
+  font-size: 50rpx;
+  margin-bottom: 80rpx;
+}
+
+.button {
+  border: #A9A9A9 1px solid;
+  width: 150rpx;
+  height: 60rpx;
+  border-radius: 5rpx;
+  background-color: #8bc34a;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}

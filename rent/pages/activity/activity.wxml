@@ -1,0 +1,4 @@
+<!--pages/activity/activity.wxml-->
+<view>
+  <image class="top-img" src="{{image}}" mode="widthFix" />
+</view>

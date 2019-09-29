@@ -1,0 +1,150 @@
+/* pages/home/home.wxss */
+.about-me {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 250rpx;
+  border-bottom: 1px #a9a9a9 solid;
+  align-items: center;
+  padding: 30rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.get-user-info-btn {
+  font-size: 40rpx;
+  background-color: #fff6e5;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.get-user-info-btn::after {
+  border: 0;
+}
+
+.user-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 30rpx 0 20rpx 30rpx;
+  width: 180rpx;
+}
+
+.user-name1 {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 30rpx 0 20rpx 30rpx;
+  width: 380rpx;
+}
+
+.name-and-sign {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 400rpx;
+}
+
+.settings {
+  margin-left: 30rpx;
+}
+
+.settings-icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.signature {
+  color: #a9a9a9;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.user-img {
+  width: 150rpx;
+  height: 150rpx;
+  
+  border-radius: 50%;
+  margin-top: 50rpx;
+}
+
+.more-info {
+  line-height: 250rpx;
+  margin-left: 10rpx;
+}
+
+.space {
+  margin-top: 60rpx;
+  border-bottom: 1px #a9a9a9 solid;
+}
+
+.my-option {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #a9a9a9 solid;
+}
+
+.icon {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 18rpx 20rpx 0 20rpx;
+}
+
+.option-title {
+  line-height: 100rpx;
+}
+
+.userinfo-avatar {
+  width: 168rpx;
+  height: 168rpx;
+  /* margin: 20rpx; */
+  border-radius: 50%;
+}
+
+.profile-info {
+  background-color: #ab956d;
+  color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+
+.profile-info .avatar {
+  height: 148rpx;
+  width: 148rpx;
+  border-radius: 50%;
+}
+
+.profile-info .info {
+  flex: 1;
+  height: 85rpx;
+  padding-left: 31.25rpx;
+}
+
+.profile-info .name {
+  display: block;
+  height: 45rpx;
+  line-height: 45rpx;
+  color: #fff;
+  font-size: 37.5rpx;
+  margin-bottom: 10rpx;
+}
+
+.logout {
+  margin-top: 220rpx;
+  margin-left: 10%;
+  height: 100rpx;
+  width: 80%;
+  line-height: 100rpx;
+  text-align: center;
+  background: #ffbe48;
+  border-radius: 14rpx;
+  color: #fff;
+  font-size: 30rpx;
+}

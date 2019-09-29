@@ -1,0 +1,31 @@
+.no-collect {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.no-collect .c {
+  width: 100%;
+  height: auto;
+  margin-top: 200rpx;
+}
+
+.no-collect .c image {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 258rpx;
+  height: 258rpx;
+}
+
+.no-collect .c text {
+  margin: 0 auto;
+  display: block;
+  width: 258rpx;
+  height: 29rpx;
+  font-size: 38rpx;
+  line-height: 29rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  color: #999;
+}

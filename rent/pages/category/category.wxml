@@ -1,0 +1,14 @@
+<!--pages/category/category.wxml-->
+<view class="catalog">
+  <scroll-view class="nav" scroll-y="true">
+    <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
+  </scroll-view>
+  <scroll-view class="cate" scroll-y="true">
+    <view class="bd">
+      <view class="item {{(index+1) % 3 == 0 ? 'last' : ''}}" wx:key="id"  data-id="{{item.id}}" data-index="{{index}}" wx:for="{{currentSubCategoryList}}" bindtap="goBack">
+        <image class="icon" mode="aspectFit" src="{{item.iconUrl}}"></image>
+        <text class="txt">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,134 @@
+<!--pages/goods/goods.wxml-->
+<!-- 卖家信息 sellerInfo Start -->
+<!-- 还可以增加一些信息(待加) -->
+<!-- 已租出图片 -->
+<view wx:if="{{!isExpiry && goods.rented}}">
+  <image src="/static/images/rent.png" class="rented-image"></image>
+</view>
+
+<view class="sellerInfo">
+  <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <text class="nickName">{{userInfo.nickName}}</text>
+</view>
+<!-- sellerInfo End -->
+
+<!-- 价格 price Start -->
+<view class="price-container">
+  <text decode="{{true}}" class="price-rmb">￥</text>
+  <text decode="{{true}}" class="price">{{goods.rentPrice}}</text>
+  <text decode="{{true}}" class="price">/天</text>
+</view>
+
+<view class="price-container1">
+  <text decode="{{true}}" class="price-rmb"><text class="price">租金</text>￥</text>
+  <text decode="{{true}}" class="price">{{goods.deposit}}</text>
+</view>
+<!-- price End -->
+
+<!-- 标题 title Start -->
+<view class="title-container">
+  <text decode="{{true}}" class="title">{{goods.name}}</text>
+</view>
+<!-- title End -->
+
+<!-- 描述 description Start -->
+<view class="desc-container">
+  <text decode="{{true}}" class="desc">{{goods.desc}}</text>
+</view>
+<!-- description End -->
+
+<!-- 图片 picture Start -->
+<view class="picture-container">
+  <view class="picture-content">
+    <block wx:for="{{goods.gallery}}" wx:key="*this">
+      <image mode="widthFix" class="picture" src="{{item}}">
+
+      </image>
+    </block>
+  </view>
+
+</view>
+<!-- picture End -->
+
+<!-- 底部固定栏 bottom-fixed Start -->
+<!-- 判断是否是自己发布的商品 -->
+<view wx:if="{{userId === postUserId}}" class="bottom-container2">
+  <view class="btn2" bindtap="updateGoods">
+    <text>编辑</text>
+  </view>
+  <view class="btn1" bindtap="deleteGoods">
+    <text>下架</text>
+  </view>
+</view>
+<!-- 不是自己发布的商品 -->
+<view wx:else class="bottom-container">
+
+  <view class="collection" bindtap="onCollectionTap">
+    <image class="collection-icon" src="{{collectImage}}"></image>
+    <text>收藏</text>
+  </view>
+
+  <!-- 判断是否登录 -->
+  <view wx:if="{{hasLogin}}">
+    <view class="share">
+      <button class="sharebtn" open-type="share">
+        <image class="share-icon" src="../../static/images/share.png" catchtap="onShareTap"></image>
+        <view class="share-title">分享</view>
+      </button>
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="share">
+      <button class="sharebtn" bindtap="goLogin">
+        <image class="share-icon" src="../../static/images/share.png"></image>
+        <view class="share-title">分享</view>
+      </button>
+    </view>
+  </view>
+
+  <!-- 商品被租且还没到期 -->
+  <view wx:if="{{goods.rented && !isExpiry}}">
+    <text class="prompt">该商品已被租出，等待重新上架中~</text>
+    <!-- <view wx:if="{{hasLogin}}">
+      <text class="prompt">该物品在{{time}}后可租</text>
+    </view>
+
+    <view wx:else>
+      <text class="prompt">该物品在{{time}}后可租</text>
+    </view> -->
+  </view>
+  <view wx:else>
+    <view wx:if="{{hasLogin}}">
+      <view class="area-btn">
+        <view class="talk">
+          <view class="talkbtn" bindtap="onTalkTap">
+            <text>租前聊一聊</text>
+          </view>
+        </view>
+
+        <view class="buy">
+          <view class="buy-btn" bindtap="goBuy">
+            <text>立即租赁</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="area-btn">
+        <view class="talk">
+          <view class="talkbtn" bindtap="goLogin">
+            <text>租前聊一聊</text>
+          </view>
+        </view>
+
+        <view class="buy">
+          <view class="buy-btn" bindtap="goLogin">
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- bottom-fixed End -->

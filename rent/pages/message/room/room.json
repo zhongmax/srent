@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "chatroom": "/components/chatroom/chatroom"
+  },
+  "navigationBarTitleText": "聊天"
+}

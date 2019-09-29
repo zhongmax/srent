@@ -1,0 +1,120 @@
+<view class="container">
+  <!-- 选择交易方式 -->
+  <view class="cu-form-group">
+    <view class="title">选择交易方式</view>
+    <picker bindchange="PickerChange" value="{{type}}" range="{{transactionType}}">
+      <view class="picker">
+        {{transactionType[type]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 快递 -->
+  <view class="address-box" hidden="{{type == 0 ? true : false}}">
+    <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.id > 0}}">
+      <view class="l">
+        <text class="name">{{checkedAddress.username}}</text>
+        <text class="default" wx:if="{{checkedAddress.isDefault}}">默认</text>
+      </view>
+      <view class="m">
+        <text class="mobile">{{checkedAddress.tel}}</text>
+        <text class="address">{{checkedAddress.addressDetail}}</text>
+      </view>
+      <view class="r">
+        <image src="/static/images/address_right.png"></image>
+      </view>
+    </view>
+    <view class="address-item address-empty" bindtap="selectAddress" wx:else>
+      <view class="m">
+        还没有收货地址，去添加
+      </view>
+      <view class="r">
+        <image src="/static/images/address_right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 见面交易 -->
+  <view class="margin-top" hidden="{{type == 1 ? true : false}}">
+    <view class="cu-form-group">
+      <view class="title">时间选择</view>
+      <picker mode="time" value="{{time}}" start="07:30" end="21:30" bindchange="TimeChange">
+        <view class="picker">
+          {{time}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">见面位置</view>
+      <input placeholder="建议选择人多的地方交易" bindinput="onAddressTap"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">联系电话</view>
+      <input bindinput="onPhoneTap" type="number"></input>
+    </view>
+  </view>
+
+  <view class="goods-info-box">
+    <view class="post-user-info">
+      <image class="post-user-avatar" src="{{postUserInfo.avatarUrl}}"></image>
+      <text class="post-user-name">{{postUserInfo.nickName}}</text>
+    </view>
+
+    <view class="post-goods-info">
+      <image mode="widthFix" class="goods-picture" src="{{goods.gallery[0]}}"></image>
+      <view class="goods-info">
+        <view class="goods-name">{{goods.name}}</view>
+        <view class="goods-rent">
+          每日租金￥
+          <text>{{goods.rentPrice}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+
+  <view class="message-box">
+    <text class="rent-title">租期</text>
+    <input class="message-item" type="number" bindinput="bindDaysInput" bindblur="bindCalcPrice" value="{{days}}" />
+    <text>天</text>
+  </view>
+
+  <view class="order-box">
+    <view class="order-item">
+      <view class="l">
+        <text class="name">商品合计</text>
+      </view>
+      <view class="r">
+        <text class="txt">￥{{goodsTotalPrice}}元</text>
+      </view>
+    </view>
+    <view class="order-item">
+      <view class="l">
+        <text class="name">运费</text>
+      </view>
+      <view class="r">
+        <text class="txt">￥{{freightPrice}}元</text>
+      </view>
+    </view>
+    <view class="order-item">
+      <view class="l">
+        <text class="name">押金</text>
+      </view>
+      <view class="r">
+        <text class="txt">￥{{goods.deposit}}元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="license">
+    <checkbox-group bindchange="checkboxChange">
+      <checkbox class="check-right" value="1">我同意该协议</checkbox>
+    </checkbox-group>
+  </view>
+
+  <view class="order-total">
+    <view class="l">实付：￥{{orderTotalPrice}}</view>
+    <view class="r" bindtap="submitOrder">去付款</view>
+  </view>
+</view>

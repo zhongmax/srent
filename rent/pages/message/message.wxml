@@ -1,0 +1,20 @@
+<!--pages/message/message.wxml-->
+<view class="no-collect" wx:if="{{messageList.length <= 0}}">
+  <view class="c">
+    <image src="/static/images/non_message.png" />
+    <text>还没有消息</text>
+  </view>
+</view>
+<view wx:else>
+  <block wx:for="{{messageList}}" wx:for-item="item" wx:key="2">
+    <view class="mess-list" bindtap="onTalkTap" data-index="{{index}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+      <image class="mess-img" src="{{item.postUserInfo.avatarUrl}}"></image>
+      <view class="mess-info">
+        <text class="author">{{item.postUserInfo.nickName}}</text>
+        <text class="detail"></text>
+        <text class="date"></text>
+      </view>
+      <image class="item-img" src="{{item.goodsInfo.gallery[0]}}"></image>
+    </view>
+  </block>
+</view>

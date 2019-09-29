@@ -1,0 +1,36 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+.container {
+  box-sizing: border-box;
+  
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+}
+
+page {
+  background: #fff6e5;
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+}
+
+text {
+  color: #333;
+}
+
+.non {
+  width: 100%;
+  height: auto;
+  margin-top: 200rpx;
+}
+
+view, image, text, navigator {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+view, text {
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+  font-size: 29rpx;
+  color: #333;
+}

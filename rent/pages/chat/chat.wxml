@@ -1,0 +1,46 @@
+<!--pages/chat/chat.wxml-->
+<view class="top-container">
+  <view class="top-goods-image">
+    <image class="top-image" src="{{goods.gallery[0]}}"></image>
+  </view>
+
+  <view class="top-goods-info">
+    <text class="goods-name">{{goods.name}}</text>
+    <text class="goods-price">￥<text>{{goods.rentPrice}} / 天</text></text>
+  </view>
+
+  <view class="buy">
+    <text class="buy-btn" bindtap="goBuy">马上租</text>
+  </view>
+</view>
+
+<view class="middle-container">
+  <scroll-view scroll-y="true" class="history">
+    <block wx:for="{{newsList}}" wx:key>
+      <view wx:if="{{item.type==0}}">
+        <view>
+          <text class="chat-time">{{item.date}}</text>
+        </view>
+        <view class="own-record">
+          <view class="own-record-content">{{item.message}}</view>
+          <view class="own-record-content-triangle"></view>
+          <image class="own-head-img" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+      <view wx:else id="{{item.message}}">
+        <view>
+          <text class="chat-time">{{item.date}}</text>
+        </view>
+        <view class="own-record">
+          <image mode="aspectFill" class="post-image" bindtap="previewImage" src="{{item.message}}" data-id="{{index}}"></image>
+          <image class="own-head-img" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="bottom-container">
+  <input class="input-box" value="{{chatContent}}" adjust-position="true" type="text" confirm-type="send" bindinput="chatInput" bindconfirm="chatDone" />
+  <image class="send-picture" src="/static/images/send-picture.png" bindtap="sendPicture"></image>
+</view>

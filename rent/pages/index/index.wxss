@@ -1,0 +1,166 @@
+/* pages/index/index.wxss */
+
+.bg {
+  width: 100%;
+  height: 667px;
+  background: linear-gradient(#FFBE48, #fff6e5);
+}
+
+.top {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+}
+
+.search {
+  margin-top: 15rpx;
+  margin-left: 25rpx;
+  background-color: #fff;
+  border-radius: 8px;
+  height: 69rpx;
+  width: 690rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-img {
+  margin: auto 15rpx auto 0;
+}
+
+.search input {
+  font-size: 30rpx;
+}
+
+.search-btn {
+  width: 120rpx;
+  height: 70rpx;
+  margin-top: 15rpx;
+  margin-left: 5rpx;
+  text-align: center;
+}
+
+.search-font {
+  line-height: 70rpx;
+}
+
+swiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sort-item {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 40rpx 0 0 10rpx;
+  align-items: center;
+}
+
+.sort-icon {
+  width: 128rpx;
+  height: 128rpx;
+  margin-bottom: 20rpx;
+}
+
+.sort-title {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.new-item-container {
+  display: flex;
+  flex-direction: column;
+  border: #A9A9A9 1px solid;
+  border-radius: 25rpx;
+  margin-left: 5%;
+  margin-top: 60rpx;
+  width: 90%;
+  /* height: 1000rpx; */
+}
+
+.new-item-title {
+  border-bottom: #A9A9A9 1px solid;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.new-item-title text {
+  font-size: 33rpx;
+  display: inline-block;
+  height: 36rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+
+.sort-item {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 40rpx 0 0 10rpx;
+  align-items: center;
+}
+
+.sort-icon {
+  width: 128rpx;
+  height: 128rpx;
+  margin-bottom: 20rpx;
+}
+
+.sort-title {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.new-item {
+  margin-top: 20rpx;
+  padding-bottom: 10rpx;
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: #A9A9A9 1px solid;
+}
+
+.new-item-img {
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.new-item-info {
+  display: flex;
+  width: 80%;
+  margin-left: 40rpx;
+  flex-direction: column;
+}
+
+.new-item-text {
+  height: 150rpx;
+  font-size: 30rpx;
+  width: 420rpx;
+  max-width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.new-item-prices {
+  flex-direction: column;
+  text-align: right;
+  margin-right: 5%;
+  font-size: 25rpx;
+  color: red;
+}

@@ -1,0 +1,23 @@
+<!--pages/home/moreSettings/moreSettings.wxml-->
+<view class="profile-info">
+  <image class="avatar" src="{{avatarUrl}}"></image>
+  <view class="info">
+    <text class="name">{{nickName}}</text>
+  </view>
+</view>
+
+<view class="column-item" bindtap="goAddress">
+  <text class="column-text">地址管理</text>
+  <image src="/static/images/go.png" class="column-image"></image>
+</view>
+<view class="space"></view>
+<view class="column-item" bindtap="goFootprint">
+  <text class="column-text">浏览足迹</text>
+  <image src="/static/images/go.png" class="column-image"></image>
+</view>
+<view class="space"></view>
+<view class="column-item" bindtap="goAboutUs">
+  <text class="column-text">关于我们</text>
+  <image src="/static/images/go.png" class="column-image"></image>
+</view>
+

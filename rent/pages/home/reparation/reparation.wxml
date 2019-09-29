@@ -1,0 +1,6 @@
+<view class="no-collect">
+  <view class="c">
+    <image src="http://pxc4naypd.bkt.clouddn.com/Money%20Egg%20.png" />
+    <text>还没有赔偿</text>
+  </view>
+</view>

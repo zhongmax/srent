@@ -1,0 +1,71 @@
+<!--pages/home/rented/rented.wxml-->
+<view class="space"></view>
+<view class="no-order" wx:if="{{orderList.length <= 0}}">
+  <view class="c">
+    <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+    <text>还没有任何订单呢</text>
+  </view>
+</view>
+<block wx:for="{{orderList}}" wx:key="id" wx:for-index="index">
+  <view class="{{item.orderStatusText !== '订单取消' ? 'content' : 'content1'}}">
+    <navigator url="../rentDetail/rentDetail?id={{item.id}}" class="order" open-type="redirect">
+
+      <!-- 到期标志 -->
+      <image wx:if="{{item.isExpiry}}" class="expiry" src="/static/images/expiry.png"></image>
+
+      <view class="top">
+        <view class="l">
+          <image class="post-user-avatar" src="{{item.postUserInfo.avatarUrl}}"></image>
+          <text class="post-username">{{item.postUserInfo.nickName}}</text>
+        </view>
+        <view class="r">
+          <text class="{{item.orderStatusText === '订单取消'?'':'order-status'}}">{{item.orderStatusText}}</text>
+        </view>
+
+      </view>
+
+      <view class="middle" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
+        <image src="{{gitem.picUrl}}" class="goods-image" mode="widthFix"></image>
+        <view class="goods-name-and-days">
+          <text class="goods-name">{{gitem.goodsName}}</text>
+          <view wx:if="{{item.orderStatusText === '交易成功'}}">
+            <text class="goods-days">归还日期：{{item.date}}</text>
+          </view>
+        </view>
+
+      </view>
+
+
+    </navigator>
+    <!-- 订单编号 -->
+    <view class="bottom">
+      <text class="order-sn">订单编号：{{item.orderSn}}</text>
+      <text class="total-goods-price">实付：￥{{item.orderPrice}}</text>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="bottom-btn" wx:if="{{item.orderStatusText !== '订单取消' && item.orderStatusText !== '租期中'}}">
+
+      <view class="margin-tb-sm text-center margin-right">
+        <button class="cu-btn round lines-grey shadow" role="button" aria-disabled="false" bindtap="cancelOrder" data-id="{{index}}">取消订单</button>
+      </view>
+      <view class="margin-tb-sm text-center ">
+        <button class="cu-btn round lines-red shadow" role="button" aria-disabled="false" bindtap="submitOrder" data-id="{{index}}">确认开租</button>
+      </view>
+
+    </view>
+
+    <view class="bottom-btn1" wx:if="{{item.orderStatusText === '租期中'}}">
+
+     <view class="line-height">
+      <text>归还日期:{{item.date}}</text>
+     </view>
+     <view class="margin-tb-sm text-center" wx:if="{{item.date === dateNow}}">
+        <button class="cu-btn round lines-red shadow" role="button" aria-disabled="false" bindtap="returnOrder" data-id="{{index}}">归还商品</button>
+      </view>
+
+    </view>
+
+  </view>
+
+</block>
