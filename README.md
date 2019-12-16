@@ -4,8 +4,6 @@
 
 一个校园租赁微信小程序，前端由微信开发工具以及少量的colorui组件完成，后端由Spring Boot完成。
 
-这个程序照搬了 [litemall](https://github.com/linlinjava/litemall) 的很多代码，自己再修修改改完成的，这里补充的不足，请去 [litemall 的文档](https://linlinjava.gitbook.io/litemall/)查看。
-
 #### 快速启动
 
 1. 在数据库中新建一个名字为 srent 的数据库，使用 srent.sql导入表与数据 
