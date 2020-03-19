@@ -34,11 +34,6 @@ import java.util.Map;
  * <li> 504，更新数据失效，即后端采用了乐观锁更新，而并发更新时存在数据更新失效；
  * <li> 505，更新数据失败，即后端数据库更新失败（正常情况应该更新成功）。
  * </ul>
- * <li> 6xx，小商城后端业务错误码，
- * 具体见litemall-admin-api模块的AdminResponseCode。
- * <li> 7xx，管理后台后端业务错误码，
- * 具体见litemall-wx-api模块的WxResponseCode。
- * </ul>
  */
 public class ResponseUtil {
 

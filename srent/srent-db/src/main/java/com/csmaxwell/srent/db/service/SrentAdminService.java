@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 public class SrentAdminService {
-    private final Column[] result = new Column[]{Column.id, Column.username, Column.avatar};
+    private final Column[] result = new Column[]{Column.id, Column.username, Column.avatar, Column.roleIds};
     @Resource
     private SrentAdminMapper adminMapper;
 

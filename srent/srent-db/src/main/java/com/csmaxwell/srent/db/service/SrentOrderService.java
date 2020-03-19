@@ -39,6 +39,12 @@ public class SrentOrderService {
         return (int) srentOrderMapper.countByExample(example);
     }
 
+    public int count() {
+        SrentOrderExample example = new SrentOrderExample();
+        example.or().andDeletedEqualTo(false);
+        return (int) srentOrderMapper.countByExample(example);
+    }
+
     public SrentOrder findById(Integer orderId) {
         return srentOrderMapper.selectByPrimaryKey(orderId);
     }
@@ -140,7 +146,34 @@ public class SrentOrderService {
         return srentOrderMapper.selectByExample(example);
     }
 
+    public List<SrentOrder> querySelective(Integer userId, String orderSn, List<Short> orderStatusArray, Integer page, Integer limit, String sort, String order) {
+        SrentOrderExample example = new SrentOrderExample();
+        SrentOrderExample.Criteria criteria = example.createCriteria();
 
+        if (userId != null) {
+            criteria.andUserIdEqualTo(userId);
+        }
+        if (!StringUtils.isEmpty(orderSn)) {
+            criteria.andOrderSnEqualTo(orderSn);
+        }
+        if (orderStatusArray != null && orderStatusArray.size() != 0) {
+            criteria.andOrderStatusIn(orderStatusArray);
+        }
+        criteria.andDeletedEqualTo(false);
+
+        if (!StringUtils.isEmpty(sort) && !StringUtils.isEmpty(order)) {
+            example.setOrderByClause(sort + " " + order);
+        }
+
+        PageHelper.startPage(page, limit);
+        return srentOrderMapper.selectByExample(example);
+    }
+
+    public int updateWithOptimisticLocker(SrentOrder order) {
+        LocalDateTime preUpdateTime = order.getUpdateTime();
+        order.setUpdateTime(LocalDateTime.now());
+        return orderMapper.updateWithOptimisticLocker(preUpdateTime, order);
+    }
 
 
 }

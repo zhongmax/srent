@@ -102,4 +102,10 @@ public class SrentCategoryService {
         example.or().andLevelEqualTo("L1").andDeletedEqualTo(false);
         return categoryMapper.selectByExampleSelective(example, CHANNEL);
     }
+
+    public int count() {
+        SrentCategoryExample example = new SrentCategoryExample();
+        example.or().andDeletedEqualTo(false);
+        return (int) categoryMapper.countByExample(example);
+    }
 }

@@ -1,0 +1,94 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties",
+      "name": "srent.storage",
+      "type": "com.csmaxwell.srent.core.storage.config.StorageProperties"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties",
+      "name": "srent.storage.local",
+      "sourceMethod": "getLocal()",
+      "type": "com.csmaxwell.srent.core.storage.config.StorageProperties$Local"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties",
+      "name": "srent.storage.qiniu",
+      "sourceMethod": "getQiniu()",
+      "type": "com.csmaxwell.srent.core.storage.config.StorageProperties$Qiniu"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx",
+      "type": "com.csmaxwell.srent.core.config.WxProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties",
+      "name": "srent.storage.active",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Local",
+      "name": "srent.storage.local.address",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Local",
+      "name": "srent.storage.local.storage-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Qiniu",
+      "name": "srent.storage.qiniu.access-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Qiniu",
+      "name": "srent.storage.qiniu.bucket-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Qiniu",
+      "name": "srent.storage.qiniu.endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.storage.config.StorageProperties$Qiniu",
+      "name": "srent.storage.qiniu.secret-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.app-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.app-secret",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.key-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.mch-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.mch-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.csmaxwell.srent.core.config.WxProperties",
+      "name": "srent.wx.notify-url",
+      "type": "java.lang.String"
+    }
+  ]
+}

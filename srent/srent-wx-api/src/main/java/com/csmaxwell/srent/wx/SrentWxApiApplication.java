@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication(scanBasePackages = {"com.csmaxwell.srent.db", "com" +
         ".csmaxwell.srent.core", "com.csmaxwell.srent.wx"})
 @MapperScan("com.csmaxwell.srent.db.dao")
-@EnableTransactionManagement
-@EnableScheduling
 public class SrentWxApiApplication {
 
     public static void main(String[] args) {

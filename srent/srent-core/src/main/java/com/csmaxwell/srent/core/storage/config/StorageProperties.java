@@ -2,17 +2,13 @@ package com.csmaxwell.srent.core.storage.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+// prefix 定位配置文件
 @ConfigurationProperties(prefix = "srent.storage")
 public class StorageProperties {
 
     private String active;
     private Local local;
 
-
-
-    // 其他暂不实现
-//    private Aliyun aliyun;
-//    private Tencent tencent;
     private Qiniu qiniu;
 
     public Qiniu getQiniu() {

@@ -35,7 +35,7 @@ public class WxFootprintController {
     /**
      * 用户足迹列表
      *
-     * @param page 分页页数
+     * @param page  分页页数
      * @param limit 分页大小
      * @return 用户足迹列表
      */
@@ -46,21 +46,24 @@ public class WxFootprintController {
         if (userId == null) {
             return ResponseUtil.unlogin();
         }
+        System.out.println("用户ID是" + userId);
         List<SrentFootprint> footprintList = footprintService.queryByAddTime(userId, page, limit);
-
+        System.out.println("足迹LIST为" + footprintList);
         List<Object> footprintVoList = new ArrayList<>(footprintList.size());
         for (SrentFootprint footprint : footprintList) {
-            Map<String, Object> c = new HashMap<String, Object>();
-            c.put("id", footprint.getId());
-            c.put("goodsId", footprint.getGoodsId());
-            c.put("addTime", footprint.getAddTime());
+            if (goodsService.checkExistByGoodsId(footprint.getGoodsId())) {
+                Map<String, Object> c = new HashMap<String, Object>();
+                c.put("id", footprint.getId());
+                c.put("goodsId", footprint.getGoodsId());
+                c.put("addTime", footprint.getAddTime());
 
-            SrentGoods goods = goodsService.findById(footprint.getGoodsId());
-            c.put("name", goods.getName());
-            c.put("picUrl", goods.getGallery());
-            c.put("retailPrice", goods.getRentPrice());
+                SrentGoods goods = goodsService.findById(footprint.getGoodsId());
+                c.put("name", goods.getName());
+                c.put("picUrl", goods.getGallery());
+                c.put("retailPrice", goods.getRentPrice());
 
-            footprintVoList.add(c);
+                footprintVoList.add(c);
+            }
         }
         return ResponseUtil.okList(footprintVoList, footprintList);
     }

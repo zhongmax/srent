@@ -235,4 +235,10 @@ public class SrentGoodsService {
         return goodsMapper.countByExample(example) != 0;
     }
 
+    public boolean checkExistByGoodsId(Integer GoodsId) {
+        SrentGoodsExample example = new SrentGoodsExample();
+        example.or().andIdEqualTo(GoodsId).andDeletedEqualTo(false);
+        return goodsMapper.countByExample(example) != 0;
+    }
+
 }

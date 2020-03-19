@@ -100,4 +100,24 @@ public class SrentUserService {
     public void deleteById(Integer id) {
         userMapper.logicalDeleteByPrimaryKey(id);
     }
+
+//    public List<SrentUser> querySelective(String username, String mobile, Integer page, Integer size, String sort, String order) {
+//        SrentUserExample example = new SrentUserExample();
+//        SrentUserExample.Criteria criteria = example.createCriteria();
+//
+//        if (!StringUtils.isEmpty(username)) {
+//            criteria.andUsernameLike("%" + username + "%");
+//        }
+//        if (!StringUtils.isEmpty(mobile)) {
+//            criteria.andMobileEqualTo(mobile);
+//        }
+//        criteria.andDeletedEqualTo(false);
+//
+//        if (!StringUtils.isEmpty(sort) && !StringUtils.isEmpty(order)) {
+//            example.setOrderByClause(sort + " " + order);
+//        }
+//
+//        PageHelper.startPage(page, size);
+//        return userMapper.selectByExample(example);
+//    }
 }

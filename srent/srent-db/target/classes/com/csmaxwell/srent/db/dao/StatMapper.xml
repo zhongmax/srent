@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csmaxwell.srent.db.dao.StatMapper">
+    <select id="statUser" resultType="map">
+        select
+        substr(add_time,1,10) as day,
+        count(distinct id) as users
+        from srent_user
+        group by substr(add_time,1,10)
+    </select>
+    <select id="statOrder" resultType="map">
+        select
+        substr(add_time,1,10) as day,
+        count(id) as orders,
+        count(distinct user_id) as customers,
+        sum(order_price) as amount,
+        round(sum(order_price)/count(distinct user_id),2) as pcr
+        from srent_order
+        where order_status in(1, 2, 3, 4, 5, 6, 7)
+        group by substr(add_time,1,10)
+    </select>
+    <select id="statGoods" resultType="map">
+        select
+        substr(add_time,1, 10) as day,
+        count(distinct order_id) as orders,
+        sum(days) as products,
+        sum(days*rent_price) as amount
+        from srent_order_goods
+        group by substr(add_time,1, 10)
+    </select>
+</mapper>

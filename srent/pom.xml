@@ -25,6 +25,8 @@
         <module>srent-core</module>
         <module>srent-db</module>
         <module>srent-wx-api</module>
+        <module>srent-all</module>
+        <module>srent-admin-api</module>
     </modules>
 
     <dependencyManagement>
@@ -45,6 +47,12 @@
             <dependency>
                 <groupId>com.csmaxwell</groupId>
                 <artifactId>srent-wx-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.csmaxwell</groupId>
+                <artifactId>srent-admin-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -70,7 +78,7 @@
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>6.1.0.Final</version>
+                <version>6.0.15.Final</version>
             </dependency>
 
             <!-- MySQL 连接驱动依赖 -->
@@ -133,6 +141,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-mail</artifactId>
                 <version>2.0.4.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.2.2</version>
             </dependency>
 
         </dependencies>

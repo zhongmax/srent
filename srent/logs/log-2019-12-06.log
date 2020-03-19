@@ -1,0 +1,290 @@
+2019-12-06 18:25:24,952 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 12712 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 18:25:24,954 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 18:25:24,954 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 18:25:27,850 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 18:25:27,868 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 18:25:27,892 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 18:25:29,572 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.123 seconds (JVM running for 30.85)
+2019-12-06 18:30:03,099 DEBUG [pool-4-thread-2] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] ==>  Preparing: select id , `name` , icon_url from srent_category WHERE ( `level` = ? and deleted = ? ) 
+2019-12-06 18:30:03,101 DEBUG [pool-4-thread-2] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] ==> Parameters: L1(String), false(Boolean)
+2019-12-06 18:30:03,107 DEBUG [pool-4-thread-2] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-12-06 18:30:03,129 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective_COUNT [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT count(0) FROM srent_goods WHERE (deleted = ?) 
+2019-12-06 18:30:03,130 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective_COUNT [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 18:30:03,136 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective_COUNT [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 18:30:03,137 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] ==>  Preparing: select id , `name` , gallery , rent_price , user_id , deposit from srent_goods WHERE ( deleted = ? ) order by add_time desc LIMIT ? 
+2019-12-06 18:30:03,139 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean), 10(Integer)
+2019-12-06 18:30:03,154 DEBUG [pool-4-thread-1] c.c.s.d.d.S.selectByExampleSelective [BaseJdbcLogger.java : 159] <==      Total: 10
+2019-12-06 20:33:36,911 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 14849 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 20:33:36,913 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 20:33:36,913 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 20:33:40,213 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 20:33:40,235 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 20:33:40,262 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 20:33:42,328 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.84 seconds (JVM running for 31.545)
+2019-12-06 20:35:37,272 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 14876 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 20:35:37,274 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 20:35:37,274 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 20:35:40,584 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 20:35:40,605 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 20:35:40,635 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 20:35:42,557 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.785 seconds (JVM running for 31.459)
+2019-12-06 20:36:54,817 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 14896 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 20:36:54,818 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 20:36:54,819 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 20:36:58,106 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 20:36:58,133 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 20:36:58,165 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 20:37:00,610 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 26.295 seconds (JVM running for 32.165)
+2019-12-06 21:02:57,010 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 15334 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 21:02:57,012 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 21:02:57,012 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 21:02:59,986 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 21:03:00,009 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 21:03:00,035 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 21:03:01,886 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.343 seconds (JVM running for 31.017)
+2019-12-06 21:51:00,950 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16081 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 21:51:00,951 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 21:51:00,952 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 21:51:03,959 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 21:51:03,977 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 21:51:04,001 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 21:51:05,804 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.489 seconds (JVM running for 31.33)
+2019-12-06 21:52:52,985 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16116 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 21:52:52,986 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 21:52:52,987 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 21:52:56,588 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 21:52:56,607 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 21:52:56,635 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 21:52:58,702 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 26.218 seconds (JVM running for 31.978)
+2019-12-06 21:54:40,298 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16139 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 21:54:40,300 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 21:54:40,300 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 21:54:43,244 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 21:54:43,264 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 21:54:43,289 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 21:54:45,090 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.265 seconds (JVM running for 31.054)
+2019-12-06 21:56:03,872 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16162 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 21:56:03,874 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 21:56:03,874 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 21:56:07,125 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 21:56:07,148 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 21:56:07,175 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 21:56:08,718 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 25.322 seconds (JVM running for 30.948)
+2019-12-06 22:03:10,058 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16277 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 22:03:10,060 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 22:03:10,060 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 22:03:14,638 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 22:03:14,656 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:03:14,678 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 22:03:17,180 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 27.63 seconds (JVM running for 33.371)
+2019-12-06 22:04:08,782 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, username, `password`, last_login_ip, last_login_time, avatar, add_time, update_time, deleted, role_ids from srent_admin WHERE ( username = ? and deleted = ? ) 
+2019-12-06 22:04:08,784 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), false(Boolean)
+2019-12-06 22:04:08,795 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:04:08,932 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==>  Preparing: update srent_admin SET username = ?, `password` = ?, last_login_ip = ?, last_login_time = ?, avatar = ?, add_time = ?, update_time = ?, deleted = ?, role_ids = ? where id = ? 
+2019-12-06 22:04:08,964 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), $2a$10$.rEfyBb/GURD9P2p0fRg/OAJGloGNDkJS4lY0cQHeqDgsbdTylBpu(String), 0:0:0:0:0:0:0:1(String), 2019-12-06 22:04:08.93(Timestamp), https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif(String), 2018-02-01 00:00:00.0(Timestamp), 2019-12-06 22:04:08.93(Timestamp), false(Boolean), [1](String), 1(Integer)
+2019-12-06 22:04:08,966 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:04:08,968 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==>  Preparing: insert into srent_log ( `admin`, ip, `type`, `action`, `status`, `result`, `comment`, add_time, update_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-12-06 22:04:08,970 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), 0:0:0:0:0:0:0:1(String), 1(Integer), 登录(String), true(Boolean), (String), (String), 2019-12-06 22:04:08.967(Timestamp), 2019-12-06 22:04:08.967(Timestamp)
+2019-12-06 22:04:08,972 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:04:08,973 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT LAST_INSERT_ID() 
+2019-12-06 22:04:08,975 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-12-06 22:04:08,976 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:06:01,516 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, username, `password`, last_login_ip, last_login_time, avatar, add_time, update_time, deleted, role_ids from srent_admin WHERE ( username = ? and deleted = ? ) 
+2019-12-06 22:06:01,517 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), false(Boolean)
+2019-12-06 22:06:01,519 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:06:01,632 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==>  Preparing: update srent_admin SET username = ?, `password` = ?, last_login_ip = ?, last_login_time = ?, avatar = ?, add_time = ?, update_time = ?, deleted = ?, role_ids = ? where id = ? 
+2019-12-06 22:06:01,634 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), $2a$10$.rEfyBb/GURD9P2p0fRg/OAJGloGNDkJS4lY0cQHeqDgsbdTylBpu(String), 0:0:0:0:0:0:0:1(String), 2019-12-06 22:06:01.632(Timestamp), https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif(String), 2018-02-01 00:00:00.0(Timestamp), 2019-12-06 22:06:01.632(Timestamp), false(Boolean), [1](String), 1(Integer)
+2019-12-06 22:06:01,636 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:06:01,637 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==>  Preparing: insert into srent_log ( `admin`, ip, `type`, `action`, `status`, `result`, `comment`, add_time, update_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-12-06 22:06:01,638 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), 0:0:0:0:0:0:0:1(String), 1(Integer), 登录(String), true(Boolean), (String), (String), 2019-12-06 22:06:01.636(Timestamp), 2019-12-06 22:06:01.636(Timestamp)
+2019-12-06 22:06:01,640 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:06:01,641 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT LAST_INSERT_ID() 
+2019-12-06 22:06:01,642 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-12-06 22:06:01,643 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:06:01,675 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:06:01,677 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:06:01,679 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:06:01,684 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:06:01,684 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:06:01,687 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:12:10,734 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:12:10,735 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:12:10,737 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:12:10,740 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:12:10,741 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:12:10,743 DEBUG [http-nio-8080-exec-2] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:18:20,336 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16671 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 22:18:20,338 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 22:18:20,338 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 22:18:25,054 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 22:18:25,076 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:18:25,105 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 22:18:27,761 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 27.938 seconds (JVM running for 33.564)
+2019-12-06 22:19:11,795 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, username, `password`, last_login_ip, last_login_time, avatar, add_time, update_time, deleted, role_ids from srent_admin WHERE ( username = ? and deleted = ? ) 
+2019-12-06 22:19:11,798 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), false(Boolean)
+2019-12-06 22:19:11,805 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:11,935 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==>  Preparing: update srent_admin SET username = ?, `password` = ?, last_login_ip = ?, last_login_time = ?, avatar = ?, add_time = ?, update_time = ?, deleted = ?, role_ids = ? where id = ? 
+2019-12-06 22:19:11,947 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), $2a$10$.rEfyBb/GURD9P2p0fRg/OAJGloGNDkJS4lY0cQHeqDgsbdTylBpu(String), 0:0:0:0:0:0:0:1(String), 2019-12-06 22:19:11.933(Timestamp), https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif(String), 2018-02-01 00:00:00.0(Timestamp), 2019-12-06 22:19:11.933(Timestamp), false(Boolean), [1](String), 1(Integer)
+2019-12-06 22:19:11,949 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:19:11,952 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==>  Preparing: insert into srent_log ( `admin`, ip, `type`, `action`, `status`, `result`, `comment`, add_time, update_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-12-06 22:19:11,954 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), 0:0:0:0:0:0:0:1(String), 1(Integer), 登录(String), true(Boolean), (String), (String), 2019-12-06 22:19:11.95(Timestamp), 2019-12-06 22:19:11.95(Timestamp)
+2019-12-06 22:19:11,956 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:19:11,957 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT LAST_INSERT_ID() 
+2019-12-06 22:19:11,958 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-12-06 22:19:11,959 DEBUG [http-nio-8080-exec-6] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:11,990 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:19:11,991 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:19:11,993 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:11,999 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:19:12,000 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:19:12,002 DEBUG [http-nio-8080-exec-8] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:12,208 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:19:12,209 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:19:12,215 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:12,223 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:19:12,225 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:19:12,226 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:19:12,235 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:19:12,236 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:19:12,241 DEBUG [http-nio-8080-exec-10] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:30,886 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:23:30,887 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:23:30,889 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:30,890 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:23:30,891 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:23:30,893 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:31,108 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:23:31,109 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:31,111 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:31,113 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:23:31,114 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:31,115 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:31,117 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:23:31,119 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:31,122 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:51,030 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:23:51,032 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:23:51,034 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:51,036 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:23:51,037 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:23:51,040 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:51,290 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:23:51,292 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:51,295 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:51,299 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:23:51,300 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:51,302 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:23:51,304 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:23:51,306 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:23:51,314 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:31,453 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:24:31,454 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:24:31,456 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:31,458 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:24:31,459 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:24:31,460 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:31,727 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:24:31,729 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:31,731 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:31,733 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:24:31,734 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:31,735 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:31,738 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:24:31,740 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:31,742 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:42,140 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:24:42,141 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:24:42,143 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:42,145 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:24:42,146 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:24:42,148 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:42,371 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:24:42,372 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:42,373 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:42,375 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:24:42,376 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:42,377 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:42,379 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:24:42,380 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:42,383 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:52,919 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:24:52,920 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:24:52,922 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:52,924 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:24:52,925 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:24:52,927 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:53,150 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:24:53,152 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:53,156 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:53,158 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:24:53,159 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:53,161 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:24:53,163 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:24:53,164 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:24:53,166 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:25:38,509 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:25:38,511 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:25:38,513 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:25:38,515 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:25:38,516 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:25:38,517 DEBUG [http-nio-8080-exec-3] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:25:38,761 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:25:38,762 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:25:38,764 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:25:38,766 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:25:38,767 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:25:38,770 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:25:38,772 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:25:38,773 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:25:38,776 DEBUG [http-nio-8080-exec-5] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:28:02,209 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 16835 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 22:28:02,211 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 22:28:02,212 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin
+2019-12-06 22:28:08,131 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 22:28:08,163 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:28:08,200 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 22:28:13,680 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 32.06 seconds (JVM running for 37.837)
+2019-12-06 22:31:05,236 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 17130 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 22:31:05,238 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 22:31:05,239 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 22:31:11,184 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 22:31:11,208 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:31:11,236 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 22:31:13,945 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 29.324 seconds (JVM running for 35.137)
+2019-12-06 22:35:03,812 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 50] Starting Application on maxwells-MacBook-Pro.local with PID 17187 (/Users/maxwell/IdeaProjects/srent/srent-all/target/classes started by maxwell in /Users/maxwell/IdeaProjects/srent)
+2019-12-06 22:35:03,813 DEBUG [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-12-06 22:35:03,814 INFO [restartedMain] com.csmaxwell.srent.Application [SpringApplication.java : 666] The following profiles are active: db,core,admin,wx
+2019-12-06 22:35:08,511 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, key_name, key_value, add_time, update_time, deleted from srent_system WHERE ( deleted = ? ) 
+2019-12-06 22:35:08,534 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:35:08,565 DEBUG [restartedMain] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 22
+2019-12-06 22:35:12,059 INFO [restartedMain] com.csmaxwell.srent.Application [StartupInfoLogger.java : 59] Started Application in 28.768 seconds (JVM running for 34.505)
+2019-12-06 22:35:30,468 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, username, `password`, last_login_ip, last_login_time, avatar, add_time, update_time, deleted, role_ids from srent_admin WHERE ( username = ? and deleted = ? ) 
+2019-12-06 22:35:30,470 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), false(Boolean)
+2019-12-06 22:35:30,478 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,607 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==>  Preparing: update srent_admin SET username = ?, `password` = ?, last_login_ip = ?, last_login_time = ?, avatar = ?, add_time = ?, update_time = ?, deleted = ?, role_ids = ? where id = ? 
+2019-12-06 22:35:30,618 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), $2a$10$.rEfyBb/GURD9P2p0fRg/OAJGloGNDkJS4lY0cQHeqDgsbdTylBpu(String), 0:0:0:0:0:0:0:1(String), 2019-12-06 22:35:30.605(Timestamp), https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif(String), 2018-02-01 00:00:00.0(Timestamp), 2019-12-06 22:35:30.605(Timestamp), false(Boolean), [1](String), 1(Integer)
+2019-12-06 22:35:30,621 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.updateByPrimaryKeySelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:35:30,624 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==>  Preparing: insert into srent_log ( `admin`, ip, `type`, `action`, `status`, `result`, `comment`, add_time, update_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-12-06 22:35:30,627 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] ==> Parameters: admin123(String), 0:0:0:0:0:0:0:1(String), 1(Integer), 登录(String), true(Boolean), (String), (String), 2019-12-06 22:35:30.622(Timestamp), 2019-12-06 22:35:30.622(Timestamp)
+2019-12-06 22:35:30,629 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective [BaseJdbcLogger.java : 159] <==    Updates: 1
+2019-12-06 22:35:30,630 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT LAST_INSERT_ID() 
+2019-12-06 22:35:30,631 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-12-06 22:35:30,633 DEBUG [http-nio-8080-exec-7] c.c.s.d.d.S.insertSelective!selectKey [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,669 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, `name`, `desc`, enabled, add_time, update_time, deleted from srent_role WHERE ( id in ( ? ) and enabled = ? and deleted = ? ) 
+2019-12-06 22:35:30,670 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), true(Boolean), false(Boolean)
+2019-12-06 22:35:30,672 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,679 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select id, role_id, permission, add_time, update_time, deleted from srent_permission WHERE ( role_id in ( ? ) and deleted = ? ) 
+2019-12-06 22:35:30,680 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] ==> Parameters: 1(Integer), false(Boolean)
+2019-12-06 22:35:30,683 DEBUG [http-nio-8080-exec-9] c.c.s.d.d.S.selectByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,949 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_user WHERE ( deleted = ? ) 
+2019-12-06 22:35:30,951 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:35:30,956 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,968 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_goods WHERE ( deleted = ? ) 
+2019-12-06 22:35:30,970 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:35:30,971 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,978 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_category WHERE ( deleted = ? ) 
+2019-12-06 22:35:30,979 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:35:30,982 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-12-06 22:35:30,993 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==>  Preparing: select count(*) from srent_order WHERE ( deleted = ? ) 
+2019-12-06 22:35:30,994 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] ==> Parameters: false(Boolean)
+2019-12-06 22:35:30,995 DEBUG [http-nio-8080-exec-1] c.c.s.d.d.S.countByExample [BaseJdbcLogger.java : 159] <==      Total: 1

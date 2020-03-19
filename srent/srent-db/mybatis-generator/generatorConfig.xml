@@ -7,17 +7,16 @@
 
     <context id="mysqlgenerator" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
-        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <!--使用``包括字段名，避免字段名与sql保留字冲突报错-->
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
-        <!-- 自动生成toString方法 -->
+        <!-- toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
-        <!-- 自动生成equals方法和hashcode方法 -->
+        <!-- equals方法和hashcode方法 -->
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
 
-        <!-- 非官方插件 https://github.com/itfsw/mybatis-generator-plugin -->
-        <!-- 查询单条数据插件 -->
+        <!-- 查询单条数据插件 https://github.com/itfsw/mybatis-generator-plugin -->
         <plugin type="com.itfsw.mybatis.generator.plugins.SelectOneByExamplePlugin"/>
         <!-- 查询结果选择性返回插件 -->
         <plugin type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin"/>
@@ -27,7 +26,7 @@
         <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
         <!-- 逻辑删除插件 -->
         <plugin type="com.itfsw.mybatis.generator.plugins.LogicalDeletePlugin">
-            <!-- 这里配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
+            <!-- 配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
             <!-- 逻辑删除列类型只能为数字、字符串或者布尔类型 -->
             <property name="logicalDeleteColumn" value="deleted"/>
             <!-- 逻辑删除-已删除值 -->
@@ -45,7 +44,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/srent?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
                         userId="root"
-                        password="root"/>
+                        password="599890897"/>
 
         <javaTypeResolver>
             <property name="useJSR310Types" value="true"/>
@@ -56,84 +55,95 @@
         <sqlMapGenerator targetPackage="com.csmaxwell.srent.db.dao" targetProject="src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.csmaxwell.srent.db.dao"
                              targetProject="src/main/java"/>
-        <!--表名-->
-<!--        <table tableName="srent_address">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
 
-<!--        <table tableName="srent_admin">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_address">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_collect">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_admin">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="role_ids" javaType="java.lang.Integer[]"
+                            typeHandler="com.csmaxwell.srent.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
 
-<!--        <table tableName="srent_footprint">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_collect">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_goods">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--            <columnOverride column="gallery" javaType="java.lang.String[]"-->
-<!--                            typeHandler="com.csmaxwell.srent.db.mybatis.JsonStringArrayTypeHandler"/>-->
-<!--        </table>-->
+        <table tableName="srent_footprint">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_chat">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-<!--        </table>-->
+        <table tableName="srent_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="gallery" javaType="java.lang.String[]"
+                            typeHandler="com.csmaxwell.srent.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+
+        <table tableName="srent_chat">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
 
         <table tableName="srent_message">
             <generatedKey column="id" sqlStatement="MySql" identity="true" />
         </table>
 
-<!--        <table tableName="srent_category">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_category">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_order">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
-<!--        <table tableName="srent_keyword">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
-<!--        <table tableName="srent_order_goods">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="srent_keyword">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="srent_order_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_region">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_region">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_search_history">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_search_history">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_sort">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_sort">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_storage">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_storage">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_system">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_system">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_topic">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--            <columnOverride column="goods" javaType="java.lang.Integer[]"-->
-<!--                            typeHandler="com.csmaxwell.srent.db.mybatis.JsonIntegerArrayTypeHandler"/>-->
-<!--        </table>-->
+        <table tableName="srent_topic">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods" javaType="java.lang.Integer[]"
+                            typeHandler="com.csmaxwell.srent.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
 
-<!--        <table tableName="srent_user">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
-<!--        <table tableName="srent_user_formid">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--        </table>-->
+        <table tableName="srent_user_formid">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="srent_role">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="srent_permission">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="srent_log">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
     </context>
 </generatorConfiguration>

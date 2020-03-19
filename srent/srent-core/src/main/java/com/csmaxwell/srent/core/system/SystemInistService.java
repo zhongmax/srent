@@ -33,25 +33,25 @@ class SystemInistService {
     private final static Map<String, String> DEFAULT_CONFIGS = new HashMap<>();
     static {
         // 小程序相关配置默认值
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_NEW, "6");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_HOT, "6");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_BRAND, "4");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_TOPIC, "4");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_CATLOG_LIST, "4");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_CATLOG_GOODS, "4");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_SHARE, "false");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_NEW, "6");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_HOT, "6");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_BRAND, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_TOPIC, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_CATLOG_LIST, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_INDEX_CATLOG_GOODS, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_WX_SHARE, "false");
         // 运费相关配置默认值
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_EXPRESS_FREIGHT_VALUE, "8");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_EXPRESS_FREIGHT_MIN, "88");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_EXPRESS_FREIGHT_VALUE, "8");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_EXPRESS_FREIGHT_MIN, "88");
         // 订单相关配置默认值
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_UNPAID, "30");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_UNCONFIRM, "7");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_COMMENT, "7");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_ORDER_UNPAID, "30");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_ORDER_UNCONFIRM, "7");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_ORDER_COMMENT, "7");
         // 订单相关配置默认值
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_NAME, "srent");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_ADDRESS, "上海");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_PHONE, "021-xxxx-xxxx");
-        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_QQ, "738696120");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_MALL_NAME, "srent");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_MALL_ADDRESS, "上海");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_MALL_PHONE, "021-xxxx-xxxx");
+        DEFAULT_CONFIGS.put(SystemConfig.Srent_MALL_QQ, "738696120");
     }
 
     @Autowired
@@ -85,10 +85,10 @@ class SystemInistService {
         infos.put("数据库地址", environment.getProperty("spring.datasource.druid.url"));
 
         infos.put("对象存储", environment.getProperty("srent.storage.active"));
-        infos.put("本地对象存储路径", environment.getProperty("srent.storage.local" +
-                ".storagePath"));
-        infos.put("本地对象访问地址", environment.getProperty("srent.storage.local" +
-                ".address"));
+//        infos.put("本地对象存储路径", environment.getProperty("srent.storage.local" +
+//                ".storagePath"));
+//        infos.put("本地对象访问地址", environment.getProperty("srent.storage.local" +
+//                ".address"));
         infos.put("本地对象访问端口", environment.getProperty("srent.storage.local" +
                 ".port"));
 

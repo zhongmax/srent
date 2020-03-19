@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="srent-admin-api" />
         <module name="srent-wx-api" />
         <module name="srent-core" />
         <module name="srent-db" />
+        <module name="srent-all" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="srent-admin-api" options="-parameters" />
+      <module name="srent-all" options="-parameters" />
       <module name="srent-core" options="-parameters" />
       <module name="srent-db" options="-parameters" />
       <module name="srent-wx-api" options="-parameters" />

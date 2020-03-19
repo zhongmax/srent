@@ -1,6 +1,5 @@
 package com.csmaxwell.srent.wx.web;
 
-import com.csmaxwell.srent.core.system.SystemConfig;
 import com.csmaxwell.srent.core.util.ResponseUtil;
 import com.csmaxwell.srent.db.domain.SrentCategory;
 import com.csmaxwell.srent.db.service.SrentCategoryService;

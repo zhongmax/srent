@@ -9,26 +9,26 @@ import java.util.Map;
  */
 public class SystemConfig {
     // 小程序相关配置
-    public final static String LITEMALL_WX_INDEX_NEW = "litemall_wx_index_new";
-    public final static String LITEMALL_WX_INDEX_HOT = "litemall_wx_index_hot";
-    public final static String LITEMALL_WX_INDEX_BRAND = "litemall_wx_index_brand";
-    public final static String LITEMALL_WX_INDEX_TOPIC = "litemall_wx_index_topic";
-    public final static String LITEMALL_WX_INDEX_CATLOG_LIST = "litemall_wx_catlog_list";
-    public final static String LITEMALL_WX_INDEX_CATLOG_GOODS = "litemall_wx_catlog_goods";
-    public final static String LITEMALL_WX_SHARE = "litemall_wx_share";
+    public final static String Srent_WX_INDEX_NEW = "srent_wx_index_new";
+    public final static String Srent_WX_INDEX_HOT = "srent_wx_index_hot";
+    public final static String Srent_WX_INDEX_BRAND = "srent_wx_index_brand";
+    public final static String Srent_WX_INDEX_TOPIC = "srent_wx_index_topic";
+    public final static String Srent_WX_INDEX_CATLOG_LIST = "srent_wx_catlog_list";
+    public final static String Srent_WX_INDEX_CATLOG_GOODS = "srent_wx_catlog_goods";
+    public final static String Srent_WX_SHARE = "srent_wx_share";
     public final static String Srent_WX_INDEX_ALL = "srent_wx_index_all";
     // 运费相关配置
-    public final static String LITEMALL_EXPRESS_FREIGHT_VALUE = "litemall_express_freight_value";
-    public final static String LITEMALL_EXPRESS_FREIGHT_MIN = "litemall_express_freight_min";
+    public final static String Srent_EXPRESS_FREIGHT_VALUE = "srent_express_freight_value";
+    public final static String Srent_EXPRESS_FREIGHT_MIN = "srent_express_freight_min";
     // 订单相关配置
-    public final static String LITEMALL_ORDER_UNPAID = "litemall_order_unpaid";
-    public final static String LITEMALL_ORDER_UNCONFIRM = "litemall_order_unconfirm";
-    public final static String LITEMALL_ORDER_COMMENT = "litemall_order_comment";
+    public final static String Srent_ORDER_UNPAID = "srent_order_unpaid";
+    public final static String Srent_ORDER_UNCONFIRM = "srent_order_unconfirm";
+    public final static String Srent_ORDER_COMMENT = "srent_order_comment";
     // 商场相关配置
-    public final static String LITEMALL_MALL_NAME = "litemall_mall_name";
-    public final static String LITEMALL_MALL_ADDRESS = "litemall_mall_address";
-    public final static String LITEMALL_MALL_PHONE = "litemall_mall_phone";
-    public final static String LITEMALL_MALL_QQ = "litemall_mall_qq";
+    public final static String Srent_MALL_NAME = "srent_mall_name";
+    public final static String Srent_MALL_ADDRESS = "srent_mall_address";
+    public final static String Srent_MALL_PHONE = "srent_mall_phone";
+    public final static String Srent_MALL_QQ = "srent_mall_qq";
 
     //所有的配置均保存在该 HashMap 中
     private static Map<String, String> SYSTEM_CONFIGS = new HashMap<>();
@@ -54,67 +54,67 @@ public class SystemConfig {
     }
 
     public static Integer getNewLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_NEW);
+        return getConfigInt(Srent_WX_INDEX_NEW);
     }
 
     public static Integer getHotLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_HOT);
+        return getConfigInt(Srent_WX_INDEX_HOT);
     }
 
     public static Integer getBrandLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_BRAND);
+        return getConfigInt(Srent_WX_INDEX_BRAND);
     }
 
     public static Integer getTopicLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_TOPIC);
+        return getConfigInt(Srent_WX_INDEX_TOPIC);
     }
 
     public static Integer getCatlogListLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_CATLOG_LIST);
+        return getConfigInt(Srent_WX_INDEX_CATLOG_LIST);
     }
 
     public static Integer getCatlogMoreLimit() {
-        return getConfigInt(LITEMALL_WX_INDEX_CATLOG_GOODS);
+        return getConfigInt(Srent_WX_INDEX_CATLOG_GOODS);
     }
 
     public static boolean isAutoCreateShareImage() {
-        return getConfigBoolean(LITEMALL_WX_SHARE);
+        return getConfigBoolean(Srent_WX_SHARE);
     }
 
     public static BigDecimal getFreight() {
-        return getConfigBigDec(LITEMALL_EXPRESS_FREIGHT_VALUE);
+        return getConfigBigDec(Srent_EXPRESS_FREIGHT_VALUE);
     }
 
     public static BigDecimal getFreightLimit() {
-        return getConfigBigDec(LITEMALL_EXPRESS_FREIGHT_MIN);
+        return getConfigBigDec(Srent_EXPRESS_FREIGHT_MIN);
     }
 
     public static Integer getOrderUnpaid() {
-        return getConfigInt(LITEMALL_ORDER_UNPAID);
+        return getConfigInt(Srent_ORDER_UNPAID);
     }
 
     public static Integer getOrderUnconfirm() {
-        return getConfigInt(LITEMALL_ORDER_UNCONFIRM);
+        return getConfigInt(Srent_ORDER_UNCONFIRM);
     }
 
     public static Integer getOrderComment() {
-        return getConfigInt(LITEMALL_ORDER_COMMENT);
+        return getConfigInt(Srent_ORDER_COMMENT);
     }
 
     public static String getMallName() {
-        return getConfig(LITEMALL_MALL_NAME);
+        return getConfig(Srent_MALL_NAME);
     }
 
     public static String getMallAddress() {
-        return getConfig(LITEMALL_MALL_ADDRESS);
+        return getConfig(Srent_MALL_ADDRESS);
     }
 
     public static String getMallPhone() {
-        return getConfig(LITEMALL_MALL_PHONE);
+        return getConfig(Srent_MALL_PHONE);
     }
 
     public static String getMallQQ() {
-        return getConfig(LITEMALL_MALL_QQ);
+        return getConfig(Srent_MALL_QQ);
     }
 
     public static void setConfigs(Map<String, String> configs) {

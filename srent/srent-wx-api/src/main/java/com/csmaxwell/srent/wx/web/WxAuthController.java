@@ -3,7 +3,6 @@ package com.csmaxwell.srent.wx.web;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
-import com.csmaxwell.srent.core.notify.NotifyService;
 import com.csmaxwell.srent.core.util.*;
 import com.csmaxwell.srent.core.util.bcrypt.BCryptPasswordEncoder;
 import com.csmaxwell.srent.db.domain.SrentUser;
