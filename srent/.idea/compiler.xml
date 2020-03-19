@@ -9,8 +9,8 @@
         <module name="srent-admin-api" />
         <module name="srent-wx-api" />
         <module name="srent-core" />
-        <module name="srent-db" />
         <module name="srent-all" />
+        <module name="srent-db" />
       </profile>
     </annotationProcessing>
   </component>
