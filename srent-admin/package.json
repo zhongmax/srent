@@ -4,7 +4,7 @@
   "description": "srent-admin basing on vue-element-admin 4.2.1",
   "author": "maxwell <zhong.maxwell@gmail.com>",
   "license": "MIT",
-"scripts": {
+  "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --mode production",
     "build:prod": "vue-cli-service build --mode production",
