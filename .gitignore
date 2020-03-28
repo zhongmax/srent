@@ -1,4 +1,15 @@
 # Created by .ignore support plugin (hsz.mobi)
+### IntelliJ IDEA ###
+/.idea/
+/private/
+/storage/
+/litemall.iml
+.checkstyle
+.idea
+*.iws
+*.iml
+*.ipr
+rebel.xml
 ### Maven template
 target/
 pom.xml.tag
@@ -132,6 +143,7 @@ test/
 ### macOS template
 # General
 .DS_Store
+*/.DS_Store
 .AppleDouble
 .LSOverride
 
