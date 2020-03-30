@@ -40,10 +40,10 @@
 
     在 srent-admin 目录下打开命令行，输入
 
-    ```shell
+    ```
 cnpm install
     cnpm run dev
-```
+    ```
     
 4. ##### 设置小程序
 
@@ -55,4 +55,6 @@ cnpm install
 
     ![](screenshot/5.png)
 
-有什么问题，欢迎在Issues中提出。
+    
+
+    有什么问题，欢迎在Issues中提出。
