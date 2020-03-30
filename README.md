@@ -2,15 +2,15 @@
 
 <img src="screenshot/logo.png" style="zoom:48%;" />
 
-一个校园租赁微信小程序，前端由微信开发工具以及少量的colorui组件完成，后端由Spring Boot完成。
+一个校园租赁微信小程序，前端由微信开发工具以及少量的colorui组件完成，后端由Spring Boot完成。后台管理由Vue以及ElementUI构成
 
 #### 快速启动
 
-1. 在数据库中新建一个名字为 srent 的数据库，使用 srent.sql导入表与数据 
+1. ##### 在数据库中新建一个名字为 srent 的数据库，将数据库文件（ srent-db/sql/srent.sql ）导入 
 
     例：mysql -u -p srent < srent.sql
 
-2. 将srent文件夹使用IDE打开，并修改一些配置：
+2. ##### 将srent文件夹使用IDE打开，并修改一些配置：
 
     例：IDEA
 
@@ -36,7 +36,16 @@
 
 
 
-3. 设置小程序
+3. ##### 设置管理后台
+
+    在 srent-admin 目录下打开命令行，输入
+
+    ```shell
+cnpm install
+    cnpm run dev
+```
+    
+4. ##### 设置小程序
 
     打开微信小程序开发工具，选择导入项目，选择 rent 文件夹，将 AppID 改为刚才在IDEA中设置的 app-id，否则不能微信登录，接着选择导入
 
