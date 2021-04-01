@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 80017
+ Source Server Version : 80022
  Source Host           : localhost:3306
  Source Schema         : srent
 
  Target Server Type    : MySQL
- Target Server Version : 80017
+ Target Server Version : 80022
  File Encoding         : 65001
 
- Date: 29/09/2019 20:43:35
+ Date: 01/04/2021 11:00:00
 */
 
 SET NAMES utf8mb4;
@@ -22,9 +22,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_address`;
 CREATE TABLE `srent_address` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '收获人名称',
-  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
+  `user_id` int NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
   `province` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '行政区域表的省ID',
   `city` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '行政区域表的市ID',
   `county` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '行政区域表的区县ID',
@@ -52,7 +52,7 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_admin`;
 CREATE TABLE `srent_admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '管理员名称',
   `password` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '管理员密码',
   `last_login_ip` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '最近一次登录IP地址',
@@ -61,21 +61,29 @@ CREATE TABLE `srent_admin` (
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
+  `role_ids` varchar(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '[]' COMMENT '角色列表',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='管理员表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='管理员表';
+
+-- ----------------------------
+-- Records of srent_admin
+-- ----------------------------
+BEGIN;
+INSERT INTO `srent_admin` VALUES (1, 'maxwell', '$2a$10$7CGMbt4WnGCPiQJQVIRfP.SF07K/NJAnkT1Ti3ZX1G1cBwrBCvDti', '0:0:0:0:0:0:0:1', '2021-04-01 02:56:15', '', '2021-04-01 08:48:42', '2021-04-01 02:56:15', 0, '[1]');
+COMMIT;
 
 -- ----------------------------
 -- Table structure for srent_category
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_category`;
 CREATE TABLE `srent_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '类型ID',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '类型ID',
   `name` varchar(63) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类型名称',
   `keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '类型关键词，以JSON数组格式',
-  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '父类ID',
+  `pid` int NOT NULL DEFAULT '0' COMMENT '父类ID',
   `icon_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '类目图标',
   `level` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'L1',
-  `sort_order` tinyint(3) DEFAULT NULL COMMENT '排序',
+  `sort_order` tinyint DEFAULT NULL COMMENT '排序',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
@@ -131,10 +139,10 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_chat`;
 CREATE TABLE `srent_chat` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '买家ID',
-  `post_user_id` int(11) NOT NULL DEFAULT '0' COMMENT '卖家ID',
-  `goods_id` int(11) NOT NULL COMMENT '商品ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL DEFAULT '0' COMMENT '买家ID',
+  `post_user_id` int NOT NULL DEFAULT '0' COMMENT '卖家ID',
+  `goods_id` int NOT NULL COMMENT '商品ID',
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内容',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -147,10 +155,10 @@ CREATE TABLE `srent_chat` (
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_collect`;
 CREATE TABLE `srent_collect` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
-  `value_id` int(11) NOT NULL DEFAULT '0' COMMENT 'type=0商品 1专题',
-  `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT '收藏类型 0 商品ID 1 专题ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
+  `value_id` int NOT NULL DEFAULT '0' COMMENT 'type=0商品 1专题',
+  `type` tinyint NOT NULL DEFAULT '0' COMMENT '收藏类型 0 商品ID 1 专题ID',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
@@ -175,9 +183,9 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_footprint`;
 CREATE TABLE `srent_footprint` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
-  `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '浏览商品ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
+  `goods_id` int NOT NULL DEFAULT '0' COMMENT '浏览商品ID',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
@@ -266,20 +274,20 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_goods`;
 CREATE TABLE `srent_goods` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品ID',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '商品ID',
   `goods_sn` varchar(63) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '商品编号',
-  `user_id` int(11) NOT NULL COMMENT '用户ID',
+  `user_id` int NOT NULL COMMENT '用户ID',
   `rent_price` decimal(10,2) NOT NULL COMMENT '每日租金',
   `deposit` decimal(10,2) NOT NULL COMMENT '押金',
   `name` varchar(127) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商品名称',
   `desc` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT '描述',
-  `category_id` int(11) NOT NULL COMMENT '商品品牌ID',
+  `category_id` int NOT NULL COMMENT '商品品牌ID',
   `keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品关键字，逗号分隔，从type还有brand中取',
   `gallery` varchar(1023) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商品图片列表，采用JSON数组格式',
-  `sort_order` smallint(4) DEFAULT '100',
+  `sort_order` smallint DEFAULT '100',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `order_id` int(11) DEFAULT NULL COMMENT '订单ID，平时为空，只有生成订单时，向改字段插入订单ID',
+  `order_id` int DEFAULT NULL COMMENT '订单ID，平时为空，只有生成订单时，向改字段插入订单ID',
   `rented` tinyint(1) DEFAULT '0' COMMENT '是否被租出',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`) USING BTREE,
@@ -301,12 +309,12 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_keyword`;
 CREATE TABLE `srent_keyword` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `keyword` varchar(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '关键字',
   `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '关键字的跳转链接',
   `is_hot` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否是热门关键字',
   `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否是默认关键字',
-  `sort_order` int(11) NOT NULL DEFAULT '100' COMMENT '排序',
+  `sort_order` int NOT NULL DEFAULT '100' COMMENT '排序',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
@@ -322,14 +330,52 @@ INSERT INTO `srent_keyword` VALUES (2, '华为', '', 1, 1, 100, NULL, NULL, 0);
 COMMIT;
 
 -- ----------------------------
+-- Table structure for srent_log
+-- ----------------------------
+DROP TABLE IF EXISTS `srent_log`;
+CREATE TABLE `srent_log` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `admin` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '管理员',
+  `ip` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IP地址',
+  `type` int DEFAULT NULL COMMENT '操作分类',
+  `action` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '操作状态',
+  `status` tinyint(1) DEFAULT NULL COMMENT '操作状态',
+  `result` varchar(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '操作结果',
+  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '补充信息',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of srent_log
+-- ----------------------------
+BEGIN;
+INSERT INTO `srent_log` VALUES (1, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 01:07:42', '2021-04-01 01:07:42', 0);
+INSERT INTO `srent_log` VALUES (2, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 01:08:14', '2021-04-01 01:08:14', 0);
+INSERT INTO `srent_log` VALUES (3, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 01:11:28', '2021-04-01 01:11:28', 0);
+INSERT INTO `srent_log` VALUES (4, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 01:17:41', '2021-04-01 01:17:41', 0);
+INSERT INTO `srent_log` VALUES (5, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 02:02:18', '2021-04-01 02:02:18', 0);
+INSERT INTO `srent_log` VALUES (6, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 02:05:01', '2021-04-01 02:05:01', 0);
+INSERT INTO `srent_log` VALUES (7, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 02:09:17', '2021-04-01 02:09:17', 0);
+INSERT INTO `srent_log` VALUES (8, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '认证失败', '', '2021-04-01 02:22:00', '2021-04-01 02:22:00', 0);
+INSERT INTO `srent_log` VALUES (9, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '用户帐号或密码不正确', '', '2021-04-01 02:43:21', '2021-04-01 02:43:21', 0);
+INSERT INTO `srent_log` VALUES (10, 'maxwell', '0:0:0:0:0:0:0:1', 1, '登录', 1, '', '', '2021-04-01 02:43:31', '2021-04-01 02:43:31', 0);
+INSERT INTO `srent_log` VALUES (11, 'maxwell', '0:0:0:0:0:0:0:1', 1, '登录', 1, '', '', '2021-04-01 02:43:40', '2021-04-01 02:43:40', 0);
+INSERT INTO `srent_log` VALUES (12, '匿名用户', '0:0:0:0:0:0:0:1', 1, '登录', 0, '用户帐号或密码不正确', '', '2021-04-01 02:55:45', '2021-04-01 02:55:45', 0);
+INSERT INTO `srent_log` VALUES (13, 'maxwell', '0:0:0:0:0:0:0:1', 1, '登录', 1, '', '', '2021-04-01 02:56:15', '2021-04-01 02:56:15', 0);
+COMMIT;
+
+-- ----------------------------
 -- Table structure for srent_message
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_message`;
 CREATE TABLE `srent_message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL COMMENT '买家ID',
-  `post_user_id` int(11) NOT NULL COMMENT '卖家ID',
-  `goods_id` int(11) NOT NULL COMMENT '商品ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL COMMENT '买家ID',
+  `post_user_id` int NOT NULL COMMENT '卖家ID',
+  `goods_id` int NOT NULL COMMENT '商品ID',
   `group_id` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '房间ID',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -354,12 +400,12 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_order`;
 CREATE TABLE `srent_order` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL COMMENT '用户表的用户ID',
-  `post_user_id` int(11) NOT NULL COMMENT '发布人ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL COMMENT '用户表的用户ID',
+  `post_user_id` int NOT NULL COMMENT '发布人ID',
   `order_sn` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '订单编号',
-  `order_status` smallint(6) NOT NULL COMMENT '订单状态 \n1：等待见面交易\n2：等待发货\n3：已发货\n4：租期中\n5：归还物品\n6：交易成功\n7：取消订单',
-  `type` int(3) NOT NULL DEFAULT '0' COMMENT '交易方式 0见面交易 1快递',
+  `order_status` smallint NOT NULL COMMENT '订单状态 \n1：等待见面交易\n2：等待发货\n3：已发货\n4：租期中\n5：归还物品\n6：交易成功\n7：取消订单',
+  `type` int NOT NULL DEFAULT '0' COMMENT '交易方式 0见面交易 1快递',
   `consignee` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收货人名称',
   `mobile` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收货人手机号',
   `address` varchar(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收货具体地址',
@@ -379,12 +425,12 @@ CREATE TABLE `srent_order` (
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_order_goods`;
 CREATE TABLE `srent_order_goods` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单表的订单ID',
-  `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `order_id` int NOT NULL DEFAULT '0' COMMENT '订单表的订单ID',
+  `goods_id` int NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
   `goods_name` varchar(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '商品名称',
   `goods_sn` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '商品编号',
-  `days` smallint(5) NOT NULL DEFAULT '0' COMMENT '商品租赁日期',
+  `days` smallint NOT NULL DEFAULT '0' COMMENT '商品租赁日期',
   `rent_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '每日租金',
   `deposit` decimal(10,2) NOT NULL COMMENT '押金',
   `pic_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '商品货品图片或者商品图片',
@@ -397,15 +443,36 @@ CREATE TABLE `srent_order_goods` (
 ) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
+-- Table structure for srent_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `srent_permission`;
+CREATE TABLE `srent_permission` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `role_id` int DEFAULT NULL COMMENT '角色ID',
+  `permission` varchar(63) DEFAULT NULL COMMENT '权限',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='权限表';
+
+-- ----------------------------
+-- Records of srent_permission
+-- ----------------------------
+BEGIN;
+INSERT INTO `srent_permission` VALUES (1, 1, '*', '2021-04-01 10:52:34', '2021-04-01 10:52:36', 0);
+COMMIT;
+
+-- ----------------------------
 -- Table structure for srent_region
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_region`;
 CREATE TABLE `srent_region` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '行政区域父ID，例如区县的pid指向市，市的pid指向省，省的pid则是0',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pid` int NOT NULL DEFAULT '0' COMMENT '行政区域父ID，例如区县的pid指向市，市的pid指向省，省的pid则是0',
   `name` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '行政区域名称',
-  `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT '行政区域类型，如如1则是省， 如果是2则是市，如果是3则是区县',
-  `code` int(11) NOT NULL DEFAULT '0' COMMENT '行政区域编码',
+  `type` tinyint NOT NULL DEFAULT '0' COMMENT '行政区域类型，如如1则是省， 如果是2则是市，如果是3则是区县',
+  `code` int NOT NULL DEFAULT '0' COMMENT '行政区域编码',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `parent_id` (`pid`) USING BTREE,
@@ -414,12 +481,35 @@ CREATE TABLE `srent_region` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='行政区域表';
 
 -- ----------------------------
+-- Table structure for srent_role
+-- ----------------------------
+DROP TABLE IF EXISTS `srent_role`;
+CREATE TABLE `srent_role` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(63) NOT NULL COMMENT '角色名称',
+  `desc` varchar(1023) DEFAULT NULL COMMENT '角色描述',
+  `enabled` tinyint(1) DEFAULT '1' COMMENT '是否启用',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='角色表';
+
+-- ----------------------------
+-- Records of srent_role
+-- ----------------------------
+BEGIN;
+INSERT INTO `srent_role` VALUES (1, '管理员', '所有权限', 1, '2021-04-01 10:46:49', '2021-04-01 10:46:52', 0);
+COMMIT;
+
+-- ----------------------------
 -- Table structure for srent_search_history
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_search_history`;
 CREATE TABLE `srent_search_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL COMMENT '用户表的用户ID',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL COMMENT '用户表的用户ID',
   `keyword` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '搜索关键字',
   `from` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '搜索来源，如pc、wx、app',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
@@ -487,11 +577,11 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_storage`;
 CREATE TABLE `srent_storage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `key` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '文件的唯一索引',
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '文件名',
   `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '文件类型',
-  `size` int(11) NOT NULL COMMENT '文件大小',
+  `size` int NOT NULL COMMENT '文件大小',
   `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '文件访问链接',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -518,14 +608,14 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_system`;
 CREATE TABLE `srent_system` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `key_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '系统配置名',
   `key_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '系统配置值',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='系统配置表';
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='系统配置表';
 
 -- ----------------------------
 -- Records of srent_system
@@ -553,6 +643,22 @@ INSERT INTO `srent_system` VALUES (21, 'litemall_mall_address', '上海', '2019-
 INSERT INTO `srent_system` VALUES (22, 'litemall_wx_index_brand', '4', '2019-08-13 16:51:13', '2019-08-13 16:51:13', 0);
 INSERT INTO `srent_system` VALUES (23, 'litemall_wx_index_topic', '4', '2019-08-13 16:51:13', '2019-08-13 16:51:13', 0);
 INSERT INTO `srent_system` VALUES (24, 'srent_wx_index_all', '10', NULL, NULL, 0);
+INSERT INTO `srent_system` VALUES (25, 'srent_wx_index_new', '6', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (26, 'srent_order_unconfirm', '7', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (27, 'srent_order_unpaid', '30', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (28, 'srent_mall_phone', '021-xxxx-xxxx', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (29, 'srent_express_freight_min', '88', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (30, 'srent_wx_index_brand', '4', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (31, 'srent_order_comment', '7', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (32, 'srent_wx_catlog_goods', '4', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (33, 'srent_wx_share', 'false', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (34, 'srent_mall_name', 'srent', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (35, 'srent_mall_address', '上海', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (36, 'srent_wx_index_topic', '4', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (37, 'srent_wx_index_hot', '6', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (38, 'srent_wx_catlog_list', '4', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (39, 'srent_mall_qq', '738696120', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
+INSERT INTO `srent_system` VALUES (40, 'srent_express_freight_value', '8', '2021-04-01 00:43:21', '2021-04-01 00:43:21', 0);
 COMMIT;
 
 -- ----------------------------
@@ -560,14 +666,14 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_topic`;
 CREATE TABLE `srent_topic` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '''' COMMENT '专题标题',
   `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '''' COMMENT '专题子标题',
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci COMMENT '专题内容，富文本格式',
   `price` decimal(10,2) DEFAULT '0.00' COMMENT '专题相关商品最低价',
   `read_count` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '1k' COMMENT '专题阅读量',
   `pic_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '专题图片',
-  `sort_order` int(11) DEFAULT '100' COMMENT '排序',
+  `sort_order` int DEFAULT '100' COMMENT '排序',
   `goods` varchar(1023) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '专题相关商品，采用JSON数组格式',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -581,10 +687,10 @@ CREATE TABLE `srent_topic` (
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_user`;
 CREATE TABLE `srent_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名称',
   `password` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '用户密码',
-  `gender` tinyint(3) NOT NULL DEFAULT '0' COMMENT '性别：0 未知， 1男， 1 女',
+  `gender` tinyint NOT NULL DEFAULT '0' COMMENT '性别：0 未知， 1男， 1 女',
   `last_login_time` datetime DEFAULT NULL COMMENT '最近一次登录时间',
   `last_login_ip` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '最近一次登录IP地址',
   `nickname` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '用户昵称或网络名称',
@@ -592,7 +698,7 @@ CREATE TABLE `srent_user` (
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '用户头像图片',
   `weixin_openid` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '微信登录openid',
   `session_key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '微信登录会话KEY',
-  `status` tinyint(3) NOT NULL DEFAULT '0' COMMENT '0 可用, 1 禁用, 2 注销',
+  `status` tinyint NOT NULL DEFAULT '0' COMMENT '0 可用, 1 禁用, 2 注销',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
@@ -608,7 +714,7 @@ INSERT INTO `srent_user` VALUES (2, '测试2', '123456', 0, NULL, '', '测试2',
 INSERT INTO `srent_user` VALUES (3, 'oWIXj5FwMqDCqEHGrnOToE6TSJ4g', 'oWIXj5FwMqDCqEHGrnOToE6TSJ4g', 1, '2019-09-29 19:53:34', '0:0:0:0:0:0:0:1', 'maxwell', '', 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ0wMgiaCzgOAloFR8J3ia1WBZWxwbwW0ud0cZq0BSfZcx3xslmTzVObDKA2BQUrBgDwwBoL8CC572g/132', 'oWIXj5FwMqDCqEHGrnOToE6TSJ4g', 'ecd3Rbrm0V5hyBj1T2jWxQ==', 0, '2019-08-16 22:04:05', '2019-09-29 19:53:34', 0);
 INSERT INTO `srent_user` VALUES (4, 'test123', '$2a$10$sLP75SnBfFetk.6.o6G91eQKEXyABi/O9CX6FZvtTea2i3LgDqeLS', 0, '2019-08-16 23:22:23', '192.168.1.112', 'test123', '15923122184', 'http://pxc4naypd.bkt.clouddn.com/avatar_3.jpg', 'test4', '', 0, '2019-08-16 23:22:23', '2019-09-17 08:53:38', 0);
 INSERT INTO `srent_user` VALUES (5, '123456', '$2a$10$giXFowFKeGGmlaIWin6U5OtFwBJfu3cEPCz1HjA63Ev0tv6xpFeFC', 0, '2019-08-31 15:39:34', '192.168.10.107', '123456', '15923022186', 'http://pxc4naypd.bkt.clouddn.com/avatar_4.jpg', 'test5', '', 0, '2019-08-31 15:39:34', '2019-08-31 15:39:34', 0);
-INSERT INTO `srent_user` VALUES (6, 'maxwells', '$2a$10$OspASfCARodIR5Pm0KPJbenKrVUbwFh3dPTHyB4dzc8Ub0E7QFtse', 0, '2019-09-04 08:28:29', '0:0:0:0:0:0:0:1', 'maxwells', '15923022184', 'http://yanxuan.nosdn.127.net/5dc0a00f2b5b066be3b01bd36952a5f7.jpg?imageView&quality=90&thumbnail=64x64', 'test6', '', 0, '2019-09-04 08:28:29', '2019-09-04 08:28:29', 0);
+INSERT INTO `srent_user` VALUES (6, 'maxwell', '$2a$10$7CGMbt4WnGCPiQJQVIRfP.SF07K/NJAnkT1Ti3ZX1G1cBwrBCvDti', 0, '2019-09-04 08:28:29', '0:0:0:0:0:0:0:1', 'maxwells', '15923022184', 'http://yanxuan.nosdn.127.net/5dc0a00f2b5b066be3b01bd36952a5f7.jpg?imageView&quality=90&thumbnail=64x64', 'test6', '', 0, '2019-09-04 08:28:29', '2019-09-04 08:28:29', 0);
 INSERT INTO `srent_user` VALUES (7, 'cmking', '$2a$10$vbdg/RGHDnNMZONF9H60KerPZ0R5bhIb/lSmNWj8B.sg3O5tXETt6', 0, '2019-09-04 17:32:12', '192.168.10.150', 'cmking', '18996887682', 'http://yanxuan.nosdn.127.net/5dc0a00f2b5b066be3b01bd36952a5f7.jpg?imageView&quality=90&thumbnail=64x64', 'test7', '', 0, '2019-09-04 17:32:12', '2019-09-04 17:32:12', 0);
 INSERT INTO `srent_user` VALUES (8, 'zhongpeng1998', '$2a$10$d0bYGuX6O64DyNK7KAUxI.RNSNfqMsqDi524yT6NgyecbXVeQklnq', 0, '2019-09-08 23:07:19', '192.168.10.107', 'zhongpeng1998', '15922322184', 'http://yanxuan.nosdn.127.net/5dc0a00f2b5b066be3b01bd36952a5f7.jpg?imageView&quality=90&thumbnail=64x64', 'test8', '', 0, '2019-09-08 23:07:19', '2019-09-08 23:07:19', 0);
 INSERT INTO `srent_user` VALUES (9, 'hahaha', '$2a$10$mdyFiSwIuu7z.dedPw1mf.3q1M/f.2RiYT1USh5IMsoNZfh.AQALG', 0, '2019-09-17 08:56:35', '0:0:0:0:0:0:0:1', 'hahaha', '15322022184', 'http://yanxuan.nosdn.127.net/5dc0a00f2b5b066be3b01bd36952a5f7.jpg?imageView&quality=90&thumbnail=64x64', 'hahaha', '', 0, '2019-09-17 08:56:35', '2019-09-17 08:56:35', 0);
@@ -621,10 +727,10 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `srent_user_formid`;
 CREATE TABLE `srent_user_formid` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `formId` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '缓存的FormId',
   `isprepay` tinyint(1) NOT NULL COMMENT '是FormId还是prepayId',
-  `useAmount` int(2) NOT NULL COMMENT '可用次数，fromId为1，prepay为3，用1次减1',
+  `useAmount` int NOT NULL COMMENT '可用次数，fromId为1，prepay为3，用1次减1',
   `expire_time` datetime NOT NULL COMMENT '过期时间，腾讯规定为7天',
   `openId` varchar(63) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '微信登录openid',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
