@@ -3,7 +3,6 @@ package com.csmaxwell.srent.admin.job;
 import com.csmaxwell.srent.db.domain.SrentOrder;
 import com.csmaxwell.srent.db.service.SrentOrderGoodsService;
 import com.csmaxwell.srent.db.service.SrentOrderService;
-import com.mysql.jdbc.log.LogFactory;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;

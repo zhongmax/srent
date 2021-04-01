@@ -9,7 +9,7 @@ import com.csmaxwell.srent.db.domain.*;
 import com.csmaxwell.srent.db.service.*;
 import com.csmaxwell.srent.wx.annotation.LoginUser;
 import com.github.pagehelper.PageInfo;
-import com.mysql.jdbc.StringUtils;
+import com.mysql.cj.util.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
